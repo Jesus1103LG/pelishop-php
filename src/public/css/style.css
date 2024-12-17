@@ -1,0 +1,447 @@
+/* Tipografia */
+
+@font-face {
+  font-family: "MiFuente";
+  src: url("../fonts/Ubuntu-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiFuente";
+  src: url("../fonts/Ubuntu-Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiFuente";
+  src: url("../fonts/Ubuntu-Light.ttf") format("ttf");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MiFuente";
+  src: url("../fonts/Ubuntu-Italic.ttf") format("ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Estilos */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-style: none;
+  list-style: none;
+  font-family: "MiFuente", sans-serif;
+}
+
+.header {
+  width: 100%;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-first-div {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 100%;
+  padding: 5px 20px;
+}
+
+.navbar-first-div img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.navbar-first-div p {
+  font-size: 18px;
+}
+
+.navbar-last-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #000;
+  color: white;
+  padding: 20px;
+}
+
+.navbar-links {
+  display: flex;
+  column-gap: 40px;
+  align-items: center;
+}
+
+.navbar-links li a {
+  font-size: 18px;
+  color: white;
+}
+
+/* First Section */
+
+.header-main {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+.header-main img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.header-main-parrafos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  row-gap: 10px;
+}
+
+.header-main-parrafos p {
+  width: 500px;
+  text-align: center;
+}
+
+.div-lomejor {
+  background: black;
+  color: #efefef;
+  width: max-content;
+  top: 25%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  position: absolute;
+}
+
+.div-lomejor p {
+  font-size: 25px;
+}
+
+/* Second Section */
+
+.first-section {
+  display: flex;
+}
+
+.first-section-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+}
+
+.first-section-div p {
+  font-size: 18px;
+  width: 550px;
+  text-align: center;
+}
+
+.first-section-img {
+  width: 30%;
+  height: 400px;
+  left: 10%;
+  top: calc(100vh - 2%);
+  object-fit: contain;
+  position: absolute;
+  filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.8));
+}
+
+.first-section-imgmain {
+  width: 50%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Mid Section */
+
+.mid-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+
+.mid-section p {
+  background: black;
+  color: #efefef;
+  width: max-content;
+  padding: 20px 40px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.mid-img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+/* Insta Section */
+
+.h2-insta {
+  background: black;
+  color: #efefef;
+  width: max-content;
+  padding: 20px 40px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.div-insta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 5rem;
+  text-align: center;
+  padding-top: 90px;
+  position: relative;
+  overflow: hidden;
+  width: 95%;
+}
+
+.div-insta-post {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 77px;
+  position: relative;
+  width: 191%;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  left: 69px;
+}
+
+.left,
+.right {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.left {
+  left: 70.5px;
+}
+
+.right {
+  right: 30px;
+}
+
+/* Cards */
+
+.div-card {
+  width: 30%;
+  height: 450px;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  text-align: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.div-card-info {
+  padding: 10px;
+}
+
+.div-card-img {
+  width: 100%;
+  height: 50%;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+
+.div-card-svg {
+  width: 15%;
+  height: 15%;
+  object-fit: cover;
+}
+
+.div-card-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.div-card-description {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.div-card-readmore {
+  width: 60%;
+  background: rgb(37 99 235);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  border-radius: 10px;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px;
+  background: #000;
+  color: white;
+  padding: 0 5%;
+  margin-top: 20%;
+}
+
+.footer img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.footer div {
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.footer div a,
+.footer div p {
+  color: #999;
+}
+
+footer {
+  background: #000;
+}
+
+footer .copy {
+  color: #555;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .header-main-parrafos {
+    width: max-content;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .header-main-parrafos p {
+    width: 350px;
+    font-size: 18px;
+  }
+
+  .first-section-div p {
+    width: max-content;
+    background: #fff;
+    position: absolute;
+    top: calc(100vh + 50%);
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    font-size: 18px;
+  }
+
+  .div-insta-post {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+  }
+
+  .div-insta-post div img {
+    width: 100%;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
+    height: 100%;
+    margin-left: 40px;
+  }
+
+  footer {
+    height: 100%;
+  }
+
+  .footer div {
+    margin-right: 0;
+  }
+
+  .footer-logo {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  footer p {
+    margin-top: 10px;
+    padding: 20px 0;
+  }
+
+  .first-section-img {
+    top: calc(100vh + 20%);
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+  }
+
+  .navbar-last-div {
+    width: 50%;
+  }
+
+  .navbar-first-div {
+    width: 50%;
+  }
+
+  .navbar-links {
+    column-gap: 20px;
+  }
+}
