@@ -73,7 +73,7 @@
     </div>
     <p class="copy">Copyright © The Jackets Team ft. PeliRed</p>
 </footer>
-<script src="Javascript/inde.js"></script>
+<script src="src/public/javascript/inde.js"></script>
 </body>
 
 </html>
