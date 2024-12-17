@@ -37,7 +37,7 @@
     <div class="div-insta">
         <h2 class="h2-insta">Insta Section</h2>
         <div class="div-insta-post"></div>
-        <button class="left"><--< /button>
+        <button class="left"><-- </button>
                 <button class="right">--></button>
     </div>
 </main>

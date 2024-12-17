@@ -106,13 +106,13 @@ prevButton.addEventListener("click", () => {
   updateCarousel();
 });
 
-// setInterval(() => {
-//   if (currentIndex < items.length - 3) {
-//     currentIndex++;
-//   } else {
-//     currentIndex = 0;
-//   }
-//   updateCarousel();
-// }, 3000);
+setInterval(() => {
+  if (currentIndex < items.length - 3) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
+  updateCarousel();
+}, 3000);
 
 window.addEventListener("resize", updateCarousel);
