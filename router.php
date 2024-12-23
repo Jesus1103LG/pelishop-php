@@ -53,7 +53,7 @@ class Router
 
         // Si el método no permite parámetros pero la URL tiene, redirige
         if ($requiredParams === 0 && $optionalParams === 0 && !empty($this->params)) {
-            header("Location: /prueba/admin/invalid_route");
+            header("Location: /peliShop_PHP/Landing/_404");
             exit;
         }
 
