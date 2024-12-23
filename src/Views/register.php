@@ -2,7 +2,6 @@
 <?php include("../layout/header.php"); ?>
 
 <div class="content">
-    <h1>Sign Up</h1>
     <form id="form" method="POST" action="">
         <div class="form-div">
             <label for="">Nombre</label>
@@ -35,6 +34,14 @@
         <div class="form-div">
             <label for="">Foto</label>
             <input id="foto-signup" type="file" required />
+        </div>
+        <div class="form-div">
+            <label for="">¿Qué eres?</label>
+            <select name="rol" id="rol" required>
+                <option value="" disabled selected>Seleccione un opcion</option>
+                <option value="2">Cliente</option>
+                <option value="3">Empresa</option>
+            </select>
         </div>
         <div class="form-div">
             <label for="">Password</label>
