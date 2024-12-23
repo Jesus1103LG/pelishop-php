@@ -44,7 +44,7 @@ cards.forEach((card) => {
   div_card.classList.add("div-card");
 
   div_card.innerHTML = `
-                  <img class="div-card-img" src="src/${card.images}" alt="${card.title}" />
+                  <img class="div-card-img" src="/peliShop_PHP/src/${card.images}" alt="${card.title}" />
                 <div class="div-card-info">
                     <h5 class="div-card-title">${card.title}</h5>
                   <p class="div-card-description">

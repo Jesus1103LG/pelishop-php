@@ -16,7 +16,7 @@ class Router
         $url = explode("/", URL);
 
         // Determina el controlador y el metodo
-        $this->controller = !empty($url[1]) ? $url[1] : "Admin";
+        $this->controller = !empty($url[1]) ? $url[1] : "Landing";
         $this->method = !empty($url[2]) ? $url[2] : "home";
 
         // Si hay parametros adicionales en la url, guardalos
