@@ -3,7 +3,7 @@
 
 <div class="content">
     <h1>Sign Up</h1>
-    <form id="form">
+    <form id="form" method="POST" action="">
         <div class="form-div">
             <label for="">Nombre</label>
             <input id="nombre-signup" type="text" required />
