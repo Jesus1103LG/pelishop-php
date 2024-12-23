@@ -1,5 +1,5 @@
-<?php $subTitulo = "Landing"; ?>
-<?php include("../layout/header.php"); ?>
+<?php $subTitulo = "Sign Up"; ?>
+<?php include("src/layout/header.php"); ?>
 
 <div class="content">
     <form id="form" method="POST" action="">
