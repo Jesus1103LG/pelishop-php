@@ -28,7 +28,7 @@ class Router
 
         // Redirige a 404 si el controlador no existe
         if (!file_exists($controllerPath)) {
-            header("Location: /prueba/admin/_404");
+            header("Location: /peliShop_PHP/Landing/_404");
             exit;
         }
 
@@ -42,7 +42,7 @@ class Router
 
         // Verifica si el método existe en el controlador
         if (!method_exists($controller, $method)) {
-            header("Location: /prueba/admin/_404");
+            header("Location: /peliShop_PHP/Landing/_404");
             exit;
         }
 

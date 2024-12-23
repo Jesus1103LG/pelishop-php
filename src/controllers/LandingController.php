@@ -10,4 +10,9 @@ class LandingController
     {
         include("src/Views/Landing/register.php");
     }
+
+    public function _404()
+    {
+        include("src/Views/Landing/404.php");
+    }
 }
