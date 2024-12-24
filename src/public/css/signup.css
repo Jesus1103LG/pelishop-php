@@ -77,13 +77,26 @@ form {
 .form-div select {
   font-size: 16px;
   border: 1px solid #dadada;
-  padding: 8px;
+  padding: 6px;
   border-radius: 5px;
 }
 
 .form-div select:focus {
   outline: none;
   border: 1px solid #717171;
+}
+
+.form-div .identidad {
+  display: flex;
+  gap: 10px;
+}
+
+#tipo-doc {
+  width: 15%;
+}
+
+#cedula {
+  width: 85%;
 }
 
 .content p a {
