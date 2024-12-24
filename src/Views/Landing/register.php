@@ -1,5 +1,9 @@
 <?php $subTitulo = "Sign Up"; ?>
 <?php include("src/layout/header.php"); ?>
+<?php
+$fecha = new DateTime();
+$fecha = $fecha->format("Y-m-d");
+?>
 
 <div class="content">
     <form id="form" method="POST" action="">
@@ -60,7 +64,7 @@
         </div>
         <div class="form-div">
             <label for="fechaNc">Fecha de nacimiento</label>
-            <input name="fechaNc" id="fechaNc" type="date" required />
+            <input name="fechaNc" id="fechaNc" type="date" min="1960-01-01" max="<?= $fecha ?>" required />
         </div>
 
         <div class="form-div">
