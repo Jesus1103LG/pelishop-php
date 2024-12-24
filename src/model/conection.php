@@ -1,5 +1,5 @@
 <?php
-include("constants.php");
+include("src/constants/constants.php");
 
 function coneccionDB()
 {

@@ -1,5 +1,5 @@
 <?php
-require_once("coneccion.php");
+require_once("src/model/conection.php");
 
 function hash_pass($pass)
 {
@@ -13,18 +13,20 @@ function create_persona($data)
     $nombre = secure_data($data["nombre"]);
     $email = secure_data($data["email"]);
     $telefono = secure_data($data["telefono"]);
-    $direccion = secure_data($data["direccion"]);
     $rol = secure_data($data["rol"]);
 
     $password = secure_data($data["password"]);
     $password = hash_pass($password);
+
+    $fecha_nc = new DateTime($data["fecha_nc"]);
+    $fecha_nc = $fecha_nc->format("Y-m-d");
 
     $create_at = new DateTime();
     $create_at = $create_at->format("Y-m-d");
 
     $coneccion = coneccionDB();
 
-    $stmt = $coneccion->prepare("INSERT INTO persona (cedula,identidad,nombre,email,telefono,password,create_at,direccion_id,roles_id) VALUES (:cedula,:identidad,:nombre,:email,:telefono,:password,:create_at,:direccion_id,:roles_id)");
+    $stmt = $coneccion->prepare("INSERT INTO persona (cedula,identidad,nombre,email,telefono,password,create_at,roles_id,fecha_nc) VALUES (:cedula,:identidad,:nombre,:email,:telefono,:password,:create_at,:roles_id, :fecha_nc)");
     $stmt->bindParam(":cedula", $cedula);
     $stmt->bindParam(":identidad", $identidad);
     $stmt->bindParam(":nombre", $nombre);
@@ -32,8 +34,8 @@ function create_persona($data)
     $stmt->bindParam(":telefono", $telefono);
     $stmt->bindParam(":password", $password);
     $stmt->bindParam(":create_at", $create_at);
-    $stmt->bindParam(":direccion_id", $direccion_id);
-    $stmt->bindParam(":roles_id", $roles_id);
+    $stmt->bindParam(":roles_id", $rol);
+    $stmt->bindParam(":fecha_nc", $fecha_nc);
 
     $stmt->execute();
 }
