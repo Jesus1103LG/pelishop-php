@@ -25,7 +25,7 @@ $url = !empty($url[2]) ? $url[2] : "home";
             <div class="navbar-last-div">
                 <ul class="navbar-links">
                     <li><a href="/peliShop_PHP/">HOME</a></li>
-                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="">SHOP</a></li>
                     <li><a href="">SITE</a></li>
                 </ul>
                 <ul class="navbar-links">
