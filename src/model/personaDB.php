@@ -39,3 +39,60 @@ function create_persona($data)
 
     $stmt->execute();
 }
+
+/** Funcion get_persona_cedula:
+ * _ Esta funcion permite obtener los datos de una persona
+ * en la base de datos apartir de su cedula, si la encuentra 
+ * devuelve los datos de la persona(array), de lo contrario devuelve
+ * false(bool).
+ */
+function get_persona_cedula($cedula)
+{
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM persona WHERE cedula=:cedula");
+    $stmt->bindParam(":cedula", $cedula);
+
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+/** Funcion get_persona_email:
+ * _ Esta funcion permite obtener los datos de una persona
+ * en la base de datos apartir de su email, si la encuentra 
+ * devuelve los datos de la persona(array), de lo contrario devuelve
+ * false(bool).
+ */
+function get_persona_email($email)
+{
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM persona WHERE email=:email");
+    $stmt->bindParam(":email", $email);
+
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+/** Funcion get_persona_telefono:
+ * _ Esta funcion permite obtener los datos de una persona
+ * en la base de datos apartir de su telefono, si la encuentra 
+ * devuelve los datos de la persona(array), de lo contrario devuelve
+ * false(bool).
+ */
+function get_persona_telefono($telefono)
+{
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM persona WHERE telefono=:telefono");
+    $stmt->bindParam(":telefono", $telefono);
+
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
