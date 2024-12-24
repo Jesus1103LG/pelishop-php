@@ -6,12 +6,6 @@ function hash_pass($pass)
     return password_hash($pass, PASSWORD_DEFAULT);
 }
 
-/** Funcion create_persona:
- * _ Esta funcion se encarga de crear y añadir una
- * persona en la base de datos, resive un diccionario
- * con los datos de la persona y ejecuta la sentencia
- * SQL para insertarla.
- */
 function create_persona(array $data): void
 {
     $cedula = secure_data($data["cedula"]);
@@ -46,13 +40,7 @@ function create_persona(array $data): void
     $stmt->execute();
 }
 
-/** Funcion get_persona_cedula:
- * _ Esta funcion permite obtener los datos de una persona
- * en la base de datos apartir de su cedula, si la encuentra 
- * devuelve los datos de la persona(array), de lo contrario devuelve
- * false(bool).
- */
-function get_persona_cedula(string $cedula): bool | array
+function get_persona_cedula(string $cedula): false | array
 {
     $coneccion = coneccionDB();
 
@@ -65,13 +53,7 @@ function get_persona_cedula(string $cedula): bool | array
     return $result;
 }
 
-/** Funcion get_persona_email:
- * _ Esta funcion permite obtener los datos de una persona
- * en la base de datos apartir de su email, si la encuentra 
- * devuelve los datos de la persona(array), de lo contrario devuelve
- * false(bool).
- */
-function get_persona_email(string $email): bool | array
+function get_persona_email(string $email): false | array
 {
     $coneccion = coneccionDB();
 
@@ -84,13 +66,7 @@ function get_persona_email(string $email): bool | array
     return $result;
 }
 
-/** Funcion get_persona_telefono:
- * _ Esta funcion permite obtener los datos de una persona
- * en la base de datos apartir de su telefono, si la encuentra 
- * devuelve los datos de la persona(array), de lo contrario devuelve
- * false(bool).
- */
-function get_persona_telefono(string $telefono): bool | array
+function get_persona_telefono(string $telefono): false | array
 {
     $coneccion = coneccionDB();
 
