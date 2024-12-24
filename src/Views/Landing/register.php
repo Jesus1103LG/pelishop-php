@@ -23,6 +23,9 @@
                 </select>
                 <input name="cedula" id="cedula" type="text" required />
             </div>
+            <?php if ($isCedula) : ?>
+                <p class="error">Cedula ya registrada</p>
+            <?php endif; ?>
         </div>
         <div class="form-div">
             <label for="nombre">Nombre</label>
@@ -35,6 +38,9 @@
         <div class="form-div">
             <label for="email">Email</label>
             <input name="email" id="email" type="email" required />
+            <?php if ($isEmail) : ?>
+                <p class="error">Email ya registrado</p>
+            <?php endif; ?>
         </div>
         <div class="form-div">
             <label for="telefono">Telefono</label>
@@ -48,6 +54,9 @@
                     max="9999999999"
                     oninput="limitDigits(this)" />
             </div>
+            <?php if ($isTelefono) : ?>
+                <p class="error">Telefono ya registrado</p>
+            <?php endif; ?>
         </div>
         <div class="form-div">
             <label for="fechaNc">Fecha de nacimiento</label>
