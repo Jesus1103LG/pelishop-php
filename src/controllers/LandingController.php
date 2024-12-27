@@ -1,13 +1,16 @@
 <?php
+require_once("src/helpers/auth.php");
 class LandingController
 {
     public function home()
     {
+        redirectIfAuthenticated();
         include("src/Views/Landing/home.php");
     }
 
     public function signup()
     {
+        redirectIfAuthenticated();
         require_once("src/model/personaDB.php");
 
         $isCedula = false;
@@ -45,6 +48,7 @@ class LandingController
 
     public function login()
     {
+        redirectIfAuthenticated();
         require_once("src/model/personaDB.php");
         try {
             $isAuth = false;
@@ -67,6 +71,16 @@ class LandingController
             die("ERROR: " . $e->getMessage());
         }
         include("src/Views/Landing/login.php");
+    }
+
+    public function logout()
+    {
+        session_start();
+        unset($_SESSION["email"]);
+        unset($_SESSION["valid"]);
+        session_destroy();
+
+        header("Location: /peliShop_PHP/");
     }
 
     public function _404()
