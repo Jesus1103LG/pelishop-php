@@ -1,4 +1,5 @@
 <?php
+require_once("src/helpers/auth.php");
 // Enrutador
 class Router
 {
@@ -28,8 +29,7 @@ class Router
 
         // Redirige a 404 si el controlador no existe
         if (!file_exists($controllerPath)) {
-            header("Location: /peliShop_PHP/Landing/_404");
-            exit;
+            redirectTo404();
         }
 
         require_once($controllerPath);
@@ -42,8 +42,7 @@ class Router
 
         // Verifica si el método existe en el controlador
         if (!method_exists($controller, $method)) {
-            header("Location: /peliShop_PHP/Landing/_404");
-            exit;
+            redirectTo404();
         }
 
         // Refleja el método para obtener información sobre los parámetros
@@ -53,8 +52,7 @@ class Router
 
         // Si el método no permite parámetros pero la URL tiene, redirige
         if ($requiredParams === 0 && $optionalParams === 0 && !empty($this->params)) {
-            header("Location: /peliShop_PHP/Landing/_404");
-            exit;
+            redirectTo404();
         }
 
         // Llama al método con los parámetros
