@@ -30,11 +30,11 @@ $url = !empty($url[2]) ? $url[2] : "home";
                 </ul>
                 <ul class="navbar-links">
                     <?php if ($url == "signup"): ?>
-                        <li><a href="/peliShop_PHP/Landing/login.html">LOGIN</a></li>
+                        <li><a href="/peliShop_PHP/Landing/login">LOGIN</a></li>
                     <?php elseif ($url == "login"): ?>
                         <li><a href="/peliShop_PHP/Landing/signup">SIGN UP</a></li>
                     <?php else: ?>
-                        <li><a href="/peliShop_PHP/Landing/login.html">LOGIN</a></li>
+                        <li><a href="/peliShop_PHP/Landing/login">LOGIN</a></li>
                         <li><a href="/peliShop_PHP/Landing/signup">SIGN UP</a></li>
                     <?php endif; ?>
 

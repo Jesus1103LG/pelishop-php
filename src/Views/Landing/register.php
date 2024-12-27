@@ -73,7 +73,7 @@ $fecha = $fecha->format("Y-m-d");
         </div>
         <button id="btn">SIGN UP</button>
     </form>
-    <p>Ya tienes una Cuenta? <a href="login.html">Login</a></p>
+    <p>Ya tienes una Cuenta? <a href="/peliShop_PHP/Landing/login">Login</a></p>
 </div>
 <script src="/peliShop_PHP/src/public/javascript/signup.js"></script>
 
