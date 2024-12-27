@@ -19,7 +19,7 @@ class LandingController
                 "cedula" => $_POST["cedula"],
                 "identidad" => $_POST["tipo-doc"],
                 "nombre" => $_POST["nombre"] . " " . $_POST["apellido"],
-                "email" => $_POST["email"],
+                "email" => strtolower($_POST["email"]),
                 "telefono" => $_POST["telefono"],
                 "rol" => $_POST["rol"],
                 "password" => $_POST["password"],
@@ -45,6 +45,27 @@ class LandingController
 
     public function login()
     {
+        require_once("src/model/personaDB.php");
+        try {
+            $isAuth = false;
+            if (isset($_POST["email"]) && isset($_POST["password"])) {
+                $email = strtolower($_POST["email"]);
+                $password = $_POST["password"];
+
+                $resultAuth = auth_user($email, $password);
+                if (!$resultAuth) {
+                    $isAuth = true;
+                } else {
+                    ob_start();
+                    session_start();
+                    $_SESSION["valid"] = true;
+                    $_SESSION["email"] = $email;
+                    header("Location: /peliShop_PHP/Cliente/home");
+                }
+            }
+        } catch (PDOException $e) {
+            die("ERROR: " . $e->getMessage());
+        }
         include("src/Views/Landing/login.php");
     }
 

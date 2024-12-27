@@ -42,6 +42,8 @@ function create_persona(array $data): void
 
 function get_persona_cedula(string $cedula): false | array
 {
+    $cedula = secure_data($cedula);
+
     $coneccion = coneccionDB();
 
     $stmt = $coneccion->prepare("SELECT * FROM persona WHERE cedula=:cedula");
@@ -55,6 +57,8 @@ function get_persona_cedula(string $cedula): false | array
 
 function get_persona_email(string $email): false | array
 {
+    $email = secure_data($email);
+
     $coneccion = coneccionDB();
 
     $stmt = $coneccion->prepare("SELECT * FROM persona WHERE email=:email");
@@ -68,6 +72,8 @@ function get_persona_email(string $email): false | array
 
 function get_persona_telefono(string $telefono): false | array
 {
+    $telefono = secure_data($telefono);
+
     $coneccion = coneccionDB();
 
     $stmt = $coneccion->prepare("SELECT * FROM persona WHERE telefono=:telefono");
@@ -77,4 +83,51 @@ function get_persona_telefono(string $telefono): false | array
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $result;
+}
+
+function check_email(string $email): bool
+{
+    $email = secure_data($email);
+
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM persona WHERE email=:email");
+    $stmt->bindParam(":email", $email);
+
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (isset($result["email"])) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function get_pass_by_email(string $email): string
+{
+    $email = secure_data($email);
+
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM persona WHERE email=:email");
+    $stmt->bindParam(":email", $email);
+
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result["password"];
+}
+
+function auth_user(string $email, string $password): bool
+{
+    $email = secure_data($email);
+    $password = secure_data($password);
+
+    if (check_email($email)) {
+        $passInDB = get_pass_by_email($email);
+        $resultAuth = password_verify($password, $passInDB);
+        return $resultAuth;
+    }
+    return false;
 }
