@@ -1,6 +1,7 @@
 <?php
 $url = explode("/", URL);
 $url = !empty($url[2]) ? $url[2] : "home";
+
 ?>
 
 <!DOCTYPE html>
@@ -28,17 +29,24 @@ $url = !empty($url[2]) ? $url[2] : "home";
                     <li><a href="">SHOP</a></li>
                     <li><a href="">SITE</a></li>
                 </ul>
-                <ul class="navbar-links">
-                    <?php if ($url == "signup"): ?>
-                        <li><a href="/peliShop_PHP/Landing/login">LOGIN</a></li>
-                    <?php elseif ($url == "login"): ?>
-                        <li><a href="/peliShop_PHP/Landing/signup">SIGN UP</a></li>
-                    <?php else: ?>
-                        <li><a href="/peliShop_PHP/Landing/login">LOGIN</a></li>
-                        <li><a href="/peliShop_PHP/Landing/signup">SIGN UP</a></li>
-                    <?php endif; ?>
+                <?php if (!isset($_SESSION["valid"])): ?>
+                    <ul class="navbar-links">
+                        <?php if ($url == "signup"): ?>
+                            <li><a href="/peliShop_PHP/Landing/login">LOGIN</a></li>
+                        <?php elseif ($url == "login"): ?>
+                            <li><a href="/peliShop_PHP/Landing/signup">SIGN UP</a></li>
+                        <?php else: ?>
+                            <li><a href="/peliShop_PHP/Landing/login">LOGIN</a></li>
+                            <li><a href="/peliShop_PHP/Landing/signup">SIGN UP</a></li>
+                        <?php endif; ?>
 
-                </ul>
+                    </ul>
+                <?php else: ?>
+                    <ul class="navbar-links">
+                        <li><a href="/peliShop_PHP/Cliente/home">PROFILE</a></li>
+                        <li><a href="/peliShop_PHP/Landing/logout">LOGOUT</a></li>
+                    </ul>
+                <?php endif; ?>
             </div>
         </nav>
     </header>
