@@ -60,11 +60,20 @@ class LandingController
                 if (!$resultAuth) {
                     $isAuth = true;
                 } else {
+                    $rol = get_persona_email($email)["roles_id"];
+
                     ob_start();
                     session_start();
                     $_SESSION["valid"] = true;
                     $_SESSION["email"] = $email;
-                    header("Location: /peliShop_PHP/Cliente/home");
+                    $_SESSION["rol"] = $rol;
+                    if ($rol == 1) {
+                        header("Location: /peliShop_PHP/Admin/home");
+                    } else if ($rol == 2) {
+                        header("Location: /peliShop_PHP/Cliente/home");
+                    } else if ($rol == 3) {
+                        header("Location: /peliShop_PHP/Empresa/home");
+                    }
                 }
             }
         } catch (PDOException $e) {

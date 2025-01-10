@@ -9,7 +9,6 @@ class ClienteController
         require_once("src/model/personaDB.php");
 
         // TODO: Logica para mostrar los productos.
-
         include("src/Views/Client/home.php");
     }
 
