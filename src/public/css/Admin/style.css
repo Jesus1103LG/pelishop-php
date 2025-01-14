@@ -1,0 +1,161 @@
+.main-admin {
+  padding: 0 10%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.listas-personas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* Estilos generales del componente */
+.card {
+  display: block;
+  max-width: 100%;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem; /* equivalent to rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* equivalent to shadow */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.card:hover {
+  background-color: #f3f4f6; /* equivalent to hover:bg-gray-100 */
+}
+
+/* Estilos para el modo oscuro */
+body.dark .card {
+  background-color: #2d3748; /* equivalent to dark:bg-gray-800 */
+  border-color: #4a5568; /* equivalent to dark:border-gray-700 */
+}
+
+body.dark .card:hover {
+  background-color: #4a5568; /* equivalent to dark:hover:bg-gray-700 */
+}
+
+/* Estilos del título */
+.card-title {
+  margin-bottom: 0.5rem; /* equivalent to mb-2 */
+  font-size: 1.5rem; /* equivalent to text-2xl */
+  font-weight: 700; /* equivalent to font-bold */
+  letter-spacing: 0.025em; /* equivalent to tracking-tight */
+  color: #1a202c; /* equivalent to text-gray-900 */
+}
+
+body.dark .card-title {
+  color: #f7fafc; /* equivalent to dark:text-white */
+}
+
+/* Estilos para la descripción */
+.card-description {
+  font-size: 2rem; /* equivalent to text-base */
+  font-weight: 400; /* equivalent to font-normal */
+  color: #4a5568; /* equivalent to text-gray-700 */
+}
+
+body.dark .card-description {
+  color: #cbd5e0; /* equivalent to dark:text-gray-400 */
+}
+
+/* Estilo general del contenedor del componente */
+.customer-card {
+  display: block;
+  max-width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Estilo de la cabecera del componente */
+.customer-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.customer-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c; /* Similar a text-gray-900 */
+}
+
+.view-all {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #3182ce; /* Similar a text-blue-600 */
+  text-decoration: none;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+/* Lista de clientes */
+.customer-list {
+  display: block;
+}
+
+.customer-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.customer-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.customer-item:last-child {
+  border-bottom: none;
+}
+
+.customer-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Imagen del cliente */
+.customer-img img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+/* Información del cliente */
+.customer-info {
+  flex-grow: 1;
+  margin-left: 1rem;
+}
+
+.customer-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a202c; /* Similar a text-gray-900 */
+  margin-bottom: 0.25rem;
+}
+
+.customer-email {
+  font-size: 0.875rem;
+  color: #4a5568; /* Similar a text-gray-500 */
+}
+
+/* Monto */
+.customer-amount {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a202c; /* Similar a text-gray-900 */
+}
