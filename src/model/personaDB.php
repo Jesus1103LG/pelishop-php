@@ -85,6 +85,21 @@ function get_persona_telefono(string $telefono): false | array
     return $result;
 }
 
+function get_persona_rol(int $rol): false | array
+{
+    $rol = secure_data($rol);
+
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM persona WHERE roles_id=:rol");
+    $stmt->bindParam(":rol", $rol);
+
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function check_email(string $email): bool
 {
     $email = secure_data($email);

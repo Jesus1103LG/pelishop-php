@@ -14,6 +14,7 @@ $url = !empty($url[2]) ? $url[2] : "home";
     <title>PeliShop - <?= $subTitulo ?></title>
     <link rel="stylesheet" href="/peliShop_PHP/src/public/css/style.css" />
     <link rel="stylesheet" href="/peliShop_PHP/src/public/css/signUp.css" />
+    <link rel="stylesheet" href="/peliShop_PHP/src/public/css/Admin/style.css" />
 </head>
 
 <body>

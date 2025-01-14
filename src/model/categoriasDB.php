@@ -30,6 +30,18 @@ function get_categoria(int $id): false | array
     return $result;
 }
 
+function get_all_categoria(): false | array
+{
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM categorias");
+
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function update_categoria(int $id, string $categoria, string $descipcion): void
 {
     $id = secure_data($id);
