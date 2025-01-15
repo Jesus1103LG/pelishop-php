@@ -11,7 +11,7 @@ class AdminController
         $cant_productos = count(get_all_productos());
         $cant_categorias = count(get_all_categoria());
         $cant_admins = count(get_persona_rol(1));
-
+        $personas = get_all_persona();
 
         include("src/Views/Admin/home.php");
     }

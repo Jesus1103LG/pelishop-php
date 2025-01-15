@@ -38,7 +38,7 @@
                 <li class="customer-item">
                     <div class="customer-details">
                         <div class="customer-img">
-                            <img src="/docs/images/people/profile-picture-1.jpg" alt="Neil image" />
+                            <img src="../src/uploads/default.png" alt="Neil image" />
                         </div>
                         <div class="customer-info">
                             <p class="customer-name">Neil Sims</p>
@@ -59,19 +59,12 @@
             </div>
             <div class="customer-list">
                 <ul role="list" class="customer-items">
-                    <li class="customer-item">
-                        <div class="customer-details">
-                            <div class="customer-img">
-                                <img src="/docs/images/people/profile-picture-1.jpg" alt="Neil image" />
-                            </div>
-                            <div class="customer-info">
-                                <p class="customer-name">Neil Sims</p>
-                                <p class="customer-email">email@windster.com</p>
-                            </div>
-                            <div class="customer-amount">31.083.641</div>
-                        </div>
-                    </li>
-                    <!-- More list items here, following the same structure -->
+                    <?php foreach ($personas as $persona): ?>
+                        <?php
+                        if ($persona["roles_id"] == 2)
+                            include("src/components/ElementListPerson.php");
+                        ?>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
@@ -82,19 +75,12 @@
             </div>
             <div class="customer-list">
                 <ul role="list" class="customer-items">
-                    <li class="customer-item">
-                        <div class="customer-details">
-                            <div class="customer-img">
-                                <img src="/docs/images/people/profile-picture-1.jpg" alt="Neil image" />
-                            </div>
-                            <div class="customer-info">
-                                <p class="customer-name">Neil Sims</p>
-                                <p class="customer-email">email@windster.com</p>
-                            </div>
-                            <div class="customer-amount">31.083.641</div>
-                        </div>
-                    </li>
-                    <!-- More list items here, following the same structure -->
+                    <?php foreach ($personas as $persona): ?>
+                        <?php
+                        if ($persona["roles_id"] == 3)
+                            include("src/components/ElementListPerson.php");
+                        ?>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
