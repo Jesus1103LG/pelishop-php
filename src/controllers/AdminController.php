@@ -12,6 +12,7 @@ class AdminController
         $cant_categorias = count(get_all_categoria());
         $cant_admins = count(get_persona_rol(1));
         $personas = get_all_persona();
+        $ventas = get_all_ventas();
 
         include("src/Views/Admin/home.php");
     }

@@ -35,19 +35,15 @@
         </div>
         <div class="customer-list">
             <ul role="list" class="customer-items">
-                <li class="customer-item">
-                    <div class="customer-details">
-                        <div class="customer-img">
-                            <img src="../src/uploads/default.png" alt="Neil image" />
-                        </div>
-                        <div class="customer-info">
-                            <p class="customer-name">Neil Sims</p>
-                            <p class="customer-email">email@windster.com</p>
-                        </div>
-                        <div class="customer-amount">$320</div>
-                    </div>
-                </li>
-                <!-- More list items here, following the same structure -->
+                <?php
+                if ($cant_ventas == 0)
+                    include("src/components/ElementListVenta.php")
+                ?>
+                <?php foreach ($ventas as $venta): ?>
+                    <?php
+                    include("src/components/ElementListVenta.php");
+                    ?>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
