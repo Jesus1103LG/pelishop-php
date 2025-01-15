@@ -100,6 +100,18 @@ function get_persona_rol(int $rol): false | array
     return $result;
 }
 
+function get_all_persona(): false | array
+{
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM persona");
+
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function check_email(string $email): bool
 {
     $email = secure_data($email);
