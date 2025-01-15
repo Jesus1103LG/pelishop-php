@@ -39,9 +39,10 @@
                 if ($cant_ventas == 0)
                     include("src/components/ElementListVenta.php")
                 ?>
-                <?php foreach ($ventas as $venta): ?>
+                <?php foreach ($ventas as $venta => $key): ?>
                     <?php
-                    include("src/components/ElementListVenta.php");
+                    if ($key < 5)
+                        include("src/components/ElementListVenta.php");
                     ?>
                 <?php endforeach; ?>
             </ul>
@@ -55,10 +56,14 @@
             </div>
             <div class="customer-list">
                 <ul role="list" class="customer-items">
-                    <?php foreach ($personas as $persona): ?>
+                    <?php $contador = 0; ?>
+                    <?php foreach ($personas as $key => $persona): ?>
                         <?php
-                        if ($persona["roles_id"] == 2)
+                        if ($persona["roles_id"] == 2) {
                             include("src/components/ElementListPerson.php");
+                            if ($contador < 4) $contador++;
+                            else break;
+                        }
                         ?>
                     <?php endforeach; ?>
                 </ul>
@@ -71,10 +76,14 @@
             </div>
             <div class="customer-list">
                 <ul role="list" class="customer-items">
+                    <?php $contadorr = 0; ?>
                     <?php foreach ($personas as $persona): ?>
                         <?php
-                        if ($persona["roles_id"] == 3)
+                        if ($persona["roles_id"] == 3) {
                             include("src/components/ElementListPerson.php");
+                            if ($contadorr < 4) $contadorr++;
+                            else break;
+                        }
                         ?>
                     <?php endforeach; ?>
                 </ul>
