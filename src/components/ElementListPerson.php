@@ -12,5 +12,5 @@
         </div>
     </li>
 <?php else: ?>
-    <li>No hay ningun persona registrada.</li>
+    <li style="color:#4a5568; font-weight: 400;">No hay ningun persona registrada.</li>
 <?php endif; ?>
