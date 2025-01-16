@@ -3,27 +3,27 @@
 
 <main class="main-admin">
     <div class="container">
-        <a href="#" class="card">
+        <a href="ventas" class="card">
             <h5 class="card-title">Cantidad de Ventas</h5>
             <p class="card-description"><?= $cant_ventas ?></p>
         </a>
-        <a href="#" class="card">
+        <a href="clientes" class="card">
             <h5 class="card-title">Cantidad de Clientes</h5>
             <p class="card-description"><?= $cant_clientes ?></p>
         </a>
-        <a href="#" class="card">
+        <a href="empresas" class="card">
             <h5 class="card-title">Cantidad de Empresas</h5>
             <p class="card-description"><?= $cant_empresas ?></p>
         </a>
-        <a href="#" class="card">
+        <a href="productos" class="card">
             <h5 class="card-title">Cantidad de Productos</h5>
             <p class="card-description"><?= $cant_productos ?></p>
         </a>
-        <a href="#" class="card">
+        <a href="categorias" class="card">
             <h5 class="card-title">Cantidad de Categorias</h5>
             <p class="card-description"><?= $cant_categorias ?></p>
         </a>
-        <a href="#" class="card">
+        <a href="admins" class="card">
             <h5 class="card-title">Cantidad de Admins</h5>
             <p class="card-description"><?= $cant_admins ?></p>
         </a>
@@ -31,7 +31,7 @@
     <div class="customer-card">
         <div class="customer-header">
             <h5 class="customer-title">Lista Ventas Recientes</h5>
-            <a href="#" class="view-all">View all</a>
+            <a href="ventas" class="view-all">View all</a>
         </div>
         <div class="customer-list">
             <ul role="list" class="customer-items">
@@ -52,7 +52,7 @@
         <div class="customer-card">
             <div class="customer-header">
                 <h5 class="customer-title">Lista de Clientes</h5>
-                <a href="#" class="view-all">View all</a>
+                <a href="clientes" class="view-all">View all</a>
             </div>
             <div class="customer-list">
                 <ul role="list" class="customer-items">
@@ -72,7 +72,7 @@
         <div class="customer-card">
             <div class="customer-header">
                 <h5 class="customer-title">Lista de Empresas</h5>
-                <a href="#" class="view-all">View all</a>
+                <a href="empresas" class="view-all">View all</a>
             </div>
             <div class="customer-list">
                 <ul role="list" class="customer-items">
