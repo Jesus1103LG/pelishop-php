@@ -17,6 +17,12 @@ class AdminController
         include("src/Views/Admin/home.php");
     }
 
+    public function tablas()
+    {
+        requireAuth();
+        include("src/Views/Admin/tablas.php");
+    }
+
     public function _404()
     {
         requireAuth();
