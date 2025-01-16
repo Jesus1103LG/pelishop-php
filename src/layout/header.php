@@ -25,11 +25,19 @@ $url = !empty($url[2]) ? $url[2] : "home";
                 <p><b>Peli</b>Shop</p>
             </div>
             <div class="navbar-last-div">
-                <ul class="navbar-links">
-                    <li><a href="/peliShop_PHP/">HOME</a></li>
-                    <li><a href="">SHOP</a></li>
-                    <li><a href="">SITE</a></li>
-                </ul>
+                <?php if (!isset($_SESSION["rol"])): ?>
+                    <ul class="navbar-links">
+                        <li><a href="/peliShop_PHP/">HOME</a></li>
+                        <li><a href="">SHOP</a></li>
+                        <li><a href="">SITE</a></li>
+                    </ul>
+                <?php elseif ($_SESSION["rol"] == 1): ?>
+                    <?php include("src/layout/navAdmin.php"); ?>
+                <?php elseif ($_SESSION["rol"] == 2): ?>
+                    <?php include("src/layout/navCliente.php"); ?>
+                <?php elseif ($_SESSION["rol"] == 3): ?>
+                    <?php include("src/layout/navEmpresa.php"); ?>
+                <?php endif; ?>
                 <?php if (!isset($_SESSION["valid"])): ?>
                     <ul class="navbar-links">
                         <?php if ($url == "signup"): ?>
