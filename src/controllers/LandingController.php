@@ -87,6 +87,7 @@ class LandingController
         session_start();
         unset($_SESSION["email"]);
         unset($_SESSION["valid"]);
+        unset($_SESSION["rol"]);
         session_destroy();
 
         header("Location: /peliShop_PHP/");
