@@ -12,10 +12,10 @@ $url = !empty($url[2]) ? $url[2] : "home";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/peliShop_PHP/src/public/logo.png" type="image/x-icon" />
     <title>PeliShop - <?= $subTitulo ?></title>
-    <link rel="stylesheet" href="/peliShop_PHP/src/public/css/style.css" />
-    <link rel="stylesheet" href="/peliShop_PHP/src/public/css/signUp.css" />
-    <link rel="stylesheet" href="/peliShop_PHP/src/public/css/Admin/style.css" />
-    <link rel="stylesheet" href="/peliShop_PHP/src/public/css/404.css">
+    <?php include("src/layout/linkStyle.php") ?>
+    <?php if (isset($_SESSION["rol"]) && $_SESSION["rol"] == 1): ?>
+        <link rel="stylesheet" href="/peliShop_PHP/src/public/css/Admin/style.css" />
+    <?php endif; ?>
 </head>
 
 <body>
