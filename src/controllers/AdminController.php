@@ -5,6 +5,7 @@ class AdminController
     public function home()
     {
         requireAuth();
+        noRedirectToOtherRol();
         $cant_ventas = count(get_all_ventas());
         $cant_clientes = count(get_persona_rol(2));
         $cant_empresas = count(get_persona_rol(3));
@@ -20,12 +21,16 @@ class AdminController
     public function tablas()
     {
         requireAuth();
+        noRedirectToOtherRol();
+
         include("src/Views/Admin/tablas.php");
     }
 
     public function _404()
     {
         requireAuth();
+        noRedirectToOtherRol();
+
         include("src/Views/Admin/404.php");
     }
 }

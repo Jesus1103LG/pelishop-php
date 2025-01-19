@@ -1,11 +1,10 @@
 <?php
-require_once("src/helpers/auth.php");
 class ClienteController
 {
     public function home()
     {
         requireAuth();
-
+        noRedirectToOtherRol();
         require_once("src/model/personaDB.php");
 
         // TODO: Logica para mostrar los productos.
@@ -15,6 +14,7 @@ class ClienteController
     public function profile()
     {
         requireAuth();
+        noRedirectToOtherRol();
 
         require_once("src/model/personaDB.php");
 
@@ -26,6 +26,8 @@ class ClienteController
     public function _404()
     {
         requireAuth();
+        noRedirectToOtherRol();
+
         include("src/Views/Client/404.php");
     }
 }
