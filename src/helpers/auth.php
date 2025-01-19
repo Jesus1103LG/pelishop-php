@@ -48,3 +48,18 @@ function redirectTo404()
     }
     exit();
 }
+
+function noRedirectToOtherRol()
+{
+    $url = explode("/", URL);
+    if ($_SESSION["rol"] == 1 && $url[1] != "Admin") {
+        header("Location: /peliShop_PHP/Admin/_404");
+        exit();
+    } elseif ($_SESSION["rol"] == 2 && $url[1] != "Cliente") {
+        header("Location: /peliShop_PHP/Cliente/_404");
+        exit();
+    } elseif ($_SESSION["rol"] == 3 && $url[1] != "Empresa") {
+        header("Location: /peliShop_PHP/Empresa/_404");
+        exit();
+    }
+}
