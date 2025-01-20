@@ -50,6 +50,9 @@ class AdminController
     {
         requireAuth();
         noRedirectToOtherRol();
+
+        $admins = get_all_persona();
+
         include("src/Views/Admin/admins.php");
     }
 

@@ -29,7 +29,7 @@
                         <td><?= $empresa["telefono"]; ?></td>
                         <td><?= $empresa["direccion_id"]; ?></td>
                         <td><?= $empresa["fecha_nc"]; ?></td>
-                        <td><?= $empresa["roles_id"] == 3 ? "Empresa" : "NSC"; ?></td>
+                        <td><?= $empresa["roles_id"] == 3 ? "Empresa" : "NSE"; ?></td>
                         <td class="password-display"><?= $empresa["password"]; ?></td>
                         <td><?= $empresa["create_at"]; ?></td>
                         <td>
