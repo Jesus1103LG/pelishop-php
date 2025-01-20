@@ -235,3 +235,10 @@ body.dark .card-description {
   color: #2563eb; /* Blue-500 */
   text-decoration: underline;
 }
+
+.password-display {
+  max-width: 150px; /* Limitar el ancho del campo */
+  text-overflow: ellipsis; /* Añadir '...' si el texto es muy largo */
+  white-space: nowrap; /* Evitar el salto de línea */
+  overflow: hidden; /* Ocultar el contenido que sobrepase el contenedor */
+}
