@@ -33,7 +33,7 @@ class AdminController
 
         $clientes = get_all_persona();
 
-        include("src/Views/Admin/clientes.php");
+        include("src/Views/Admin/tables/clientes.php");
     }
 
     public function empresas()
@@ -43,7 +43,7 @@ class AdminController
 
         $empresas = get_all_persona();
 
-        include("src/Views/Admin/empresas.php");
+        include("src/Views/Admin/tables/empresas.php");
     }
 
     public function admins()
@@ -53,7 +53,7 @@ class AdminController
 
         $admins = get_all_persona();
 
-        include("src/Views/Admin/admins.php");
+        include("src/Views/Admin/tables/admins.php");
     }
 
     public function _404()
