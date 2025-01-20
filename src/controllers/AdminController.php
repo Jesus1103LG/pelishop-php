@@ -26,6 +26,20 @@ class AdminController
         include("src/Views/Admin/tablas.php");
     }
 
+    public function clientes()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+        include("src/Views/Admin/clientes.php");
+    }
+
+    public function empresas()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+        include("src/Views/Admin/empresas.php");
+    }
+
     public function _404()
     {
         requireAuth();
