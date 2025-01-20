@@ -56,6 +56,16 @@ class AdminController
         include("src/Views/Admin/tables/admins.php");
     }
 
+    public function estados()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $estados = get_all_estados();
+
+        include("src/Views/Admin/tables/estados.php");
+    }
+
     public function _404()
     {
         requireAuth();
