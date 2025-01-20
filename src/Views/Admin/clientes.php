@@ -11,6 +11,7 @@
                 <th>Email</th>
                 <th>Teléfono</th>
                 <th>Dirección</th>
+                <th>Fecha Nacimiento</th>
                 <th>Rol</th>
                 <th>Password</th>
                 <th>Created At</th>
@@ -18,35 +19,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>12345678</td>
-                <td>1234-5678-9012</td>
-                <td>Juan Pérez</td>
-                <td>juan@example.com</td>
-                <td>555-1234</td>
-                <td>Calle 123, Ciudad</td>
-                <td>Admin</td>
-                <td>*******</td>
-                <td>2023-01-01</td>
-                <td>
-                    <a href="#" class="action-link">Editar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>87654321</td>
-                <td>4321-8765-2109</td>
-                <td>María López</td>
-                <td>maria@example.com</td>
-                <td>555-5678</td>
-                <td>Calle 456, Ciudad</td>
-                <td>Usuario</td>
-                <td>*******</td>
-                <td>2023-01-02</td>
-                <td>
-                    <a href="#" class="action-link">Editar</a>
-                </td>
-            </tr>
-            <!-- Más filas aquí -->
+            <?php foreach ($clientes as $cliente): ?>
+                <?php if ($cliente["roles_id"] == 2): ?>
+                    <tr>
+                        <td><?= $cliente["cedula"]; ?></td>
+                        <td><?= $cliente["identidad"]; ?></td>
+                        <td><?= $cliente["nombre"]; ?></td>
+                        <td><?= $cliente["email"]; ?></td>
+                        <td><?= $cliente["telefono"]; ?></td>
+                        <td><?= $cliente["direccion_id"]; ?></td>
+                        <td><?= $cliente["fecha_nc"]; ?></td>
+                        <td><?= $cliente["roles_id"] == 2 ? "Cliente" : "NSC"; ?></td>
+                        <td class="password-display"><?= $cliente["password"]; ?></td>
+                        <td><?= $cliente["create_at"]; ?></td>
+                        <td>
+                            <a href="cliente-detail/<?= $cliente["cedula"] ?>" class="action-link">Editar</a>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>

@@ -30,6 +30,9 @@ class AdminController
     {
         requireAuth();
         noRedirectToOtherRol();
+
+        $clientes = get_all_persona();
+
         include("src/Views/Admin/clientes.php");
     }
 
