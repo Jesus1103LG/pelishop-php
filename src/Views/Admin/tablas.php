@@ -31,7 +31,7 @@
             <h5 class="card-title">Direcciones</h5>
             <p class="card-description"></p>
         </a>
-        <a href="admins" class="card">
+        <a href="estados" class="card">
             <h5 class="card-title">Estados</h5>
             <p class="card-description"></p>
         </a>
