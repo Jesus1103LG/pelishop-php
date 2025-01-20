@@ -40,6 +40,9 @@ class AdminController
     {
         requireAuth();
         noRedirectToOtherRol();
+
+        $empresas = get_all_persona();
+
         include("src/Views/Admin/empresas.php");
     }
 

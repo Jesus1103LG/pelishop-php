@@ -11,6 +11,7 @@
                 <th>Email</th>
                 <th>Teléfono</th>
                 <th>Dirección</th>
+                <th>Fecha Nacimiento</th>
                 <th>Rol</th>
                 <th>Password</th>
                 <th>Created At</th>
@@ -18,35 +19,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>12345678</td>
-                <td>1234-5678-9012</td>
-                <td>Juan Pérez</td>
-                <td>juan@example.com</td>
-                <td>555-1234</td>
-                <td>Calle 123, Ciudad</td>
-                <td>Admin</td>
-                <td>*******</td>
-                <td>2023-01-01</td>
-                <td>
-                    <a href="#" class="action-link">Editar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>87654321</td>
-                <td>4321-8765-2109</td>
-                <td>María López</td>
-                <td>maria@example.com</td>
-                <td>555-5678</td>
-                <td>Calle 456, Ciudad</td>
-                <td>Usuario</td>
-                <td>*******</td>
-                <td>2023-01-02</td>
-                <td>
-                    <a href="#" class="action-link">Editar</a>
-                </td>
-            </tr>
-            <!-- Más filas aquí -->
+            <?php foreach ($empresas as $empresa): ?>
+                <?php if ($empresa["roles_id"] == 3): ?>
+                    <tr>
+                        <td><?= $empresa["cedula"]; ?></td>
+                        <td><?= $empresa["identidad"]; ?></td>
+                        <td><?= $empresa["nombre"]; ?></td>
+                        <td><?= $empresa["email"]; ?></td>
+                        <td><?= $empresa["telefono"]; ?></td>
+                        <td><?= $empresa["direccion_id"]; ?></td>
+                        <td><?= $empresa["fecha_nc"]; ?></td>
+                        <td><?= $empresa["roles_id"] == 3 ? "Empresa" : "NSC"; ?></td>
+                        <td class="password-display"><?= $empresa["password"]; ?></td>
+                        <td><?= $empresa["create_at"]; ?></td>
+                        <td>
+                            <a href="empresa-detail/<?= $empresa["cedula"] ?>" class="action-link">Editar</a>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>
