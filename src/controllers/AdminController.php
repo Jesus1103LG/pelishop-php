@@ -40,6 +40,13 @@ class AdminController
         include("src/Views/Admin/empresas.php");
     }
 
+    public function admins()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+        include("src/Views/Admin/admins.php");
+    }
+
     public function _404()
     {
         requireAuth();
