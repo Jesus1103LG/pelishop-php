@@ -159,3 +159,79 @@ body.dark .card-description {
   font-weight: 600;
   color: #1a202c; /* Similar a text-gray-900 */
 }
+
+/* Tablas de Informacion */
+
+.table-container {
+  position: relative;
+  overflow-x: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 0 5%;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+  color: #4b5563; /* Gray-500 */
+}
+
+.custom-table thead {
+  background-color: #f9fafb; /* Gray-50 */
+  color: #374151; /* Gray-700 */
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.custom-table thead th {
+  padding: 12px 24px;
+  border-bottom: 2px solid #e5e7eb; /* Gray-200 */
+}
+
+.custom-table tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* White */
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f3f4f6; /* Gray-50 */
+}
+
+.custom-table tbody tr:hover {
+  background-color: #e5e7eb; /* Gray-200 */
+}
+
+.custom-table tbody td {
+  padding: 12px 24px;
+  border-bottom: 1px solid #d1d5db; /* Gray-300 */
+}
+
+.custom-table tbody th {
+  font-weight: 500;
+  color: #111827; /* Gray-900 */
+  white-space: nowrap;
+}
+
+.custom-table a {
+  color: #3b82f6; /* Blue-600 */
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.custom-table a:hover {
+  text-decoration: underline;
+  color: #2563eb; /* Blue-500 */
+}
+
+.action-link {
+  color: #3b82f6; /* Blue-600 */
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.action-link:hover {
+  color: #2563eb; /* Blue-500 */
+  text-decoration: underline;
+}
