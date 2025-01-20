@@ -28,6 +28,18 @@ function get_estado(int $id): false | array
     return $result;
 }
 
+function get_all_estados(): false | array
+{
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM estados");
+
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function update_estados(int $id, string $estado): void
 {
     $id = secure_data($id);
