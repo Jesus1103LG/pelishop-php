@@ -1,4 +1,4 @@
-<?php $subTitulo = "Estado Table"; ?>
+<?php $subTitulo = "Ciudad Table"; ?>
 <?php include("src/layout/header.php"); ?>
 
 <div class="table-container">

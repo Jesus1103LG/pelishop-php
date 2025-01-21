@@ -1,4 +1,4 @@
-<?php $subTitulo = "Estado Table"; ?>
+<?php $subTitulo = "Rol Table"; ?>
 <?php include("src/layout/header.php"); ?>
 
 <div class="table-container">
