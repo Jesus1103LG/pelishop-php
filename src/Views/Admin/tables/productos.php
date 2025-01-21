@@ -1,4 +1,4 @@
-<?php $subTitulo = "Categoria Table"; ?>
+<?php $subTitulo = "Productos Table"; ?>
 <?php include("src/layout/header.php"); ?>
 
 <div class="table-container">
