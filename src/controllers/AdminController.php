@@ -106,6 +106,16 @@ class AdminController
         include("src/Views/Admin/tables/productos.php");
     }
 
+    public function ventas()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $ventas = get_all_ventas();
+
+        include("src/Views/Admin/tables/ventas.php");
+    }
+
     public function _404()
     {
         requireAuth();
