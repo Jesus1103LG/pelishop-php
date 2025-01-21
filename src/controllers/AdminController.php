@@ -86,6 +86,16 @@ class AdminController
         include("src/Views/Admin/tables/roles.php");
     }
 
+    public function categorias()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $categorias = get_all_categoria();
+
+        include("src/Views/Admin/tables/categorias.php");
+    }
+
     public function _404()
     {
         requireAuth();
