@@ -96,6 +96,16 @@ class AdminController
         include("src/Views/Admin/tables/categorias.php");
     }
 
+    public function productos()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $productos = get_all_productos();
+
+        include("src/Views/Admin/tables/productos.php");
+    }
+
     public function _404()
     {
         requireAuth();

@@ -1,0 +1,43 @@
+<?php $subTitulo = "Categoria Table"; ?>
+<?php include("src/layout/header.php"); ?>
+
+<div class="table-container">
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>nombre</th>
+                <th>precio</th>
+                <th>stock</th>
+                <th>talla</th>
+                <th>color</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if ($productos): ?>
+                <?php foreach ($productos as $producto): ?>
+                    <tr>
+                        <td><?= $producto["id"]; ?></td>
+                        <td><?= $producto["nombre"]; ?></td>
+                        <td><?= $producto["precio"]; ?></td>
+                        <td><?= $producto["stock"]; ?></td>
+                        <td><?= $producto["talla"]; ?></td>
+                        <td><?= $producto["color"]; ?></td>
+                        <td>
+                            <a href="producto-detail/<?= $producto["id"] ?>" class="action-link">Editar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="7">No hay productos</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html>
