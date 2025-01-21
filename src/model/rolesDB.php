@@ -28,6 +28,18 @@ function get_rol(int $id): false | array
     return $result;
 }
 
+function get_all_roles(): false | array
+{
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM roles");
+
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function update_rol(int $id, string $rol): void
 {
     $id = secure_data($id);
