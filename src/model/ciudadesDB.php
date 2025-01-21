@@ -30,6 +30,18 @@ function get_ciudad(int $id): false | array
     return $result;
 }
 
+function get_all_ciudades(): false | array
+{
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM ciudades");
+
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function get_ciudades_by_estado(int $estados_id): false | array
 {
     $estados_id = secure_data($estados_id);
