@@ -76,6 +76,16 @@ class AdminController
         include("src/Views/Admin/tables/ciudades.php");
     }
 
+    public function roles()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $roles = get_all_roles();
+
+        include("src/Views/Admin/tables/roles.php");
+    }
+
     public function _404()
     {
         requireAuth();
