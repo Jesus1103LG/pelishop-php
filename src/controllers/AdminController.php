@@ -66,6 +66,16 @@ class AdminController
         include("src/Views/Admin/tables/estados.php");
     }
 
+    public function ciudades()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $ciudades = get_all_ciudades();
+
+        include("src/Views/Admin/tables/ciudades.php");
+    }
+
     public function _404()
     {
         requireAuth();
