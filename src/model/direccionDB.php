@@ -32,6 +32,18 @@ function get_direccion(int $id): false | array
     return $result;
 }
 
+function get_all_direcciones(): false | array
+{
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM direccion");
+
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function update_direccion(int $id, string $calle, int $estado_id, int $ciudad_id): void
 {
     $id = secure_data($id);
