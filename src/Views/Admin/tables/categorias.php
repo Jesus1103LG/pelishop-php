@@ -25,7 +25,7 @@
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
-                    <td colspan="3">No hay estados</td>
+                    <td colspan="4">No hay Categorias</td>
                 </tr>
             <?php endif; ?>
         </tbody>
