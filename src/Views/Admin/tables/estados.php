@@ -11,15 +11,21 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($estados as $estado): ?>
+            <?php if ($estados): ?>
+                <?php foreach ($estados as $estado): ?>
+                    <tr>
+                        <td><?= $estado["id"]; ?></td>
+                        <td><?= $estado["estado"]; ?></td>
+                        <td>
+                            <a href="estado-detail/<?= $estado["id"] ?>" class="action-link">Editar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
                 <tr>
-                    <td><?= $estado["id"]; ?></td>
-                    <td><?= $estado["estado"]; ?></td>
-                    <td>
-                        <a href="estado-detail/<?= $estado["id"] ?>" class="action-link">Editar</a>
-                    </td>
+                    <td colspan="3">No hay estados</td>
                 </tr>
-            <?php endforeach; ?>
+            <?php endif; ?>
         </tbody>
     </table>
 </div>

@@ -12,16 +12,22 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($ciudades as $ciudad): ?>
+            <?php if ($ciudades): ?>
+                <?php foreach ($ciudades as $ciudad): ?>
+                    <tr>
+                        <td><?= $ciudad["id"]; ?></td>
+                        <td><?= $ciudad["ciudad"]; ?></td>
+                        <td><?= get_estado($ciudad["estados_id"])["estado"]; ?></td>
+                        <td>
+                            <a href="ciudad-detail/<?= $ciudad["id"] ?>" class="action-link">Editar</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
                 <tr>
-                    <td><?= $ciudad["id"]; ?></td>
-                    <td><?= $ciudad["ciudad"]; ?></td>
-                    <td><?= get_estado($ciudad["estados_id"])["estado"]; ?></td>
-                    <td>
-                        <a href="ciudad-detail/<?= $ciudad["id"] ?>" class="action-link">Editar</a>
-                    </td>
+                    <td colspan="4">No hay ciudades</td>
                 </tr>
-            <?php endforeach; ?>
+            <?php endif; ?>
         </tbody>
     </table>
 </div>
