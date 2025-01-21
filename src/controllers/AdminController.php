@@ -116,6 +116,16 @@ class AdminController
         include("src/Views/Admin/tables/ventas.php");
     }
 
+    public function direcciones()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $direcciones = get_all_direcciones();
+
+        include("src/Views/Admin/tables/direcciones.php");
+    }
+
     public function _404()
     {
         requireAuth();
