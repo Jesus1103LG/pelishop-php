@@ -1,7 +1,7 @@
 <?php $subTitulo = "Cliente Detail"; ?>
 <?php include("src/layout/header.php"); ?>
 <?php
-$nom = explode(" ", $cliente["nombre"]);
+$nom = explode(" ", $persona["nombre"]);
 ?>
 
 <div class="content">
@@ -23,12 +23,12 @@ $nom = explode(" ", $cliente["nombre"]);
                     $tipos = ["V", "E", "J", "G"];
                     foreach ($tipos as $tipo) :
                     ?>
-                        <option value="<?= $tipo ?>" <?= $cliente["identidad"] == $tipo ? "selected" : "" ?>>
+                        <option value="<?= $tipo ?>" <?= $persona["identidad"] == $tipo ? "selected" : "" ?>>
                             <?= $tipo ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <input name="cedula" id="cedula" type="text" value="<?= $cliente["cedula"]; ?>" required />
+                <input name="cedula" id="cedula" type="text" value="<?= $persona["cedula"]; ?>" required />
             </div>
         </div>
         <div class="form-div">
@@ -41,7 +41,7 @@ $nom = explode(" ", $cliente["nombre"]);
         </div>
         <div class="form-div">
             <label for="email">Email</label>
-            <input name="email" id="email" type="email" value="<?= $cliente["email"]; ?>" required />
+            <input name="email" id="email" type="email" value="<?= $persona["email"]; ?>" required />
         </div>
         <div class="form-div">
             <label for="telefono">Telefono</label>
@@ -54,12 +54,12 @@ $nom = explode(" ", $cliente["nombre"]);
                     required
                     max="9999999999"
                     oninput="limitDigits(this)"
-                    value="<?= $cliente["telefono"]; ?>" />
+                    value="<?= $persona["telefono"]; ?>" />
             </div>
         </div>
         <div class="form-div">
             <label for="fechaNc">Fecha de nacimiento</label>
-            <input name="fechaNc" id="fechaNc" type="date" min="1960-01-01" max="<?= $fecha ?>" value="<?= $cliente["fecha_nc"] ?>" required />
+            <input name="fechaNc" id="fechaNc" type="date" min="1960-01-01" max="<?= $fecha ?>" value="<?= $persona["fecha_nc"] ?>" required />
         </div>
         <div style="display: flex; gap: 10px;">
             <button style="width: 50%;" id="btn_edit" name="accion" value="update">EDIT</button>
