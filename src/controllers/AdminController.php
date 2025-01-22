@@ -41,7 +41,7 @@ class AdminController
         requireAuth();
         noRedirectToOtherRol();
 
-        $cliente = get_persona_cedula($cedula);
+        $persona = get_persona_cedula($cedula);
 
         try {
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -86,6 +86,48 @@ class AdminController
         $empresas = get_all_persona();
 
         include("src/Views/Admin/tables/empresas.php");
+    }
+
+    public function empresa_detail($cedula)
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $persona = get_persona_cedula($cedula);
+
+        try {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $data = [
+                    "cedula" => $_POST["cedula"],
+                    "identidad" => $_POST["tipo-doc"],
+                    "nombre" => $_POST["nombre"] . " " . $_POST["apellido"],
+                    "email" => strtolower($_POST["email"]),
+                    "telefono" => $_POST["telefono"],
+                    "rol" => $_POST["rol"],
+                    "fecha_nc" => $_POST["fechaNc"]
+                ];
+
+                if (isset($_POST["accion"])) {
+                    switch ($_POST["accion"]) {
+                        case 'update':
+                            update_persona($data);
+                            header("Location: ../empresas");
+                            break;
+                        case 'delete':
+                            delete_persona($cedula);
+                            header("Location: ../empresas");
+                            break;
+                        default:
+                            echo "Accion no reconocida.";
+                            break;
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            die("ERROR:" . $e->getMessage());
+        }
+
+        include("src/Views/Admin/tables-details/empresaDetail.php");
     }
 
     public function admins()
