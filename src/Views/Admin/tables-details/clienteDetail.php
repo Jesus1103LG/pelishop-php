@@ -2,6 +2,10 @@
 <?php include("src/layout/header.php"); ?>
 <?php
 $nom = explode(" ", $persona["nombre"]);
+
+if (count($nom) > 2) {
+    $nom = [$nom[0] . " " . $nom[1], $nom[2] . " " . $nom[3]];
+}
 ?>
 
 <div class="content">
