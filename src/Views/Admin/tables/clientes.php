@@ -31,7 +31,7 @@
                         <td class="password-display"><?= $cliente["password"]; ?></td>
                         <td><?= $cliente["create_at"]; ?></td>
                         <td>
-                            <a href="cliente-detail/<?= $cliente["cedula"] ?>" class="action-link">Editar</a>
+                            <a href="cliente_detail/<?= $cliente["cedula"] ?>" class="action-link">Editar</a>
                         </td>
                     </tr>
                 <?php endif; ?>

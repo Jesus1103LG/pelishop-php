@@ -17,7 +17,7 @@
                         <td><?= $rol["id"]; ?></td>
                         <td><?= $rol["rol"]; ?></td>
                         <td>
-                            <a href="rol-detail/<?= $rol["id"] ?>" class="action-link">Editar</a>
+                            <a href="rol_detail/<?= $rol["id"] ?>" class="action-link">Editar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

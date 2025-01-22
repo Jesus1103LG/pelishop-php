@@ -21,7 +21,7 @@
                         <td><?= $venta["monto"]; ?></td>
                         <td><?= get_persona_cedula($venta["persona_cedula"])["nombre"]; ?></td>
                         <td>
-                            <a href="venta-detail/<?= $venta["id"] ?>" class="action-link">Editar</a>
+                            <a href="venta_detail/<?= $venta["id"] ?>" class="action-link">Editar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

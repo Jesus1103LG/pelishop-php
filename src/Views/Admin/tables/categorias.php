@@ -19,7 +19,7 @@
                         <td><?= $categoria["categoria"]; ?></td>
                         <td><?= $categoria["descripcion"] != "" ? $categoria["descripcion"] : "No hay descripcion"; ?></td>
                         <td>
-                            <a href="categoria-detail/<?= $categoria["id"] ?>" class="action-link">Editar</a>
+                            <a href="categoria_detail/<?= $categoria["id"] ?>" class="action-link">Editar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

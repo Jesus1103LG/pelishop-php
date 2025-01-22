@@ -17,7 +17,7 @@
                         <td><?= $estado["id"]; ?></td>
                         <td><?= $estado["estado"]; ?></td>
                         <td>
-                            <a href="estado-detail/<?= $estado["id"] ?>" class="action-link">Editar</a>
+                            <a href="estado_detail/<?= $estado["id"] ?>" class="action-link">Editar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

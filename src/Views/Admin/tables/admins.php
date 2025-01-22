@@ -31,7 +31,7 @@
                         <td class="password-display"><?= $admin["password"]; ?></td>
                         <td><?= $admin["create_at"]; ?></td>
                         <td>
-                            <a href="admin-detail/<?= $admin["cedula"] ?>" class="action-link">Editar</a>
+                            <a href="admin_detail/<?= $admin["cedula"] ?>" class="action-link">Editar</a>
                         </td>
                     </tr>
                 <?php endif; ?>

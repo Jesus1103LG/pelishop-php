@@ -21,7 +21,7 @@
                         <td><?= get_estado($direccion["estados_id"])["estado"]; ?></td>
                         <td><?= get_ciudad($direccion["ciudades_id"])["ciudad"]; ?></td>
                         <td>
-                            <a href="direccion-detail/<?= $direccion["id"] ?>" class="action-link">Editar</a>
+                            <a href="direccion_detail/<?= $direccion["id"] ?>" class="action-link">Editar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

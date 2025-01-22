@@ -31,7 +31,7 @@
                         <td class="password-display"><?= $empresa["password"]; ?></td>
                         <td><?= $empresa["create_at"]; ?></td>
                         <td>
-                            <a href="empresa-detail/<?= $empresa["cedula"] ?>" class="action-link">Editar</a>
+                            <a href="empresa_detail/<?= $empresa["cedula"] ?>" class="action-link">Editar</a>
                         </td>
                     </tr>
                 <?php endif; ?>

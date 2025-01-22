@@ -19,7 +19,7 @@
                         <td><?= $ciudad["ciudad"]; ?></td>
                         <td><?= get_estado($ciudad["estados_id"])["estado"]; ?></td>
                         <td>
-                            <a href="ciudad-detail/<?= $ciudad["id"] ?>" class="action-link">Editar</a>
+                            <a href="ciudad_detail/<?= $ciudad["id"] ?>" class="action-link">Editar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
