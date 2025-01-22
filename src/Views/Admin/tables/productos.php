@@ -11,6 +11,7 @@
                 <th>stock</th>
                 <th>talla</th>
                 <th>color</th>
+                <th>distribuidor</th>
                 <th>Acción</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                         <td><?= $producto["stock"]; ?></td>
                         <td><?= $producto["talla"]; ?></td>
                         <td><?= $producto["color"]; ?></td>
+                        <td><?= get_persona_cedula($producto["color"])["email"]; ?></td>
                         <td>
                             <a href="producto-detail/<?= $producto["id"] ?>" class="action-link">Editar</a>
                         </td>
@@ -31,7 +33,7 @@
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
-                    <td colspan="7">No hay productos</td>
+                    <td colspan="8">No hay productos</td>
                 </tr>
             <?php endif; ?>
         </tbody>
