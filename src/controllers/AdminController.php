@@ -36,6 +36,48 @@ class AdminController
         include("src/Views/Admin/tables/clientes.php");
     }
 
+    public function cliente_detail($cedula)
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $cliente = get_persona_cedula($cedula);
+
+        try {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $data = [
+                    "cedula" => $_POST["cedula"],
+                    "identidad" => $_POST["tipo-doc"],
+                    "nombre" => $_POST["nombre"] . " " . $_POST["apellido"],
+                    "email" => strtolower($_POST["email"]),
+                    "telefono" => $_POST["telefono"],
+                    "rol" => $_POST["rol"],
+                    "fecha_nc" => $_POST["fechaNc"]
+                ];
+
+                if (isset($_POST["accion"])) {
+                    switch ($_POST["accion"]) {
+                        case 'update':
+                            update_persona($data);
+                            header("Location: ../clientes");
+                            break;
+                        case 'delete':
+                            delete_persona($cedula);
+                            header("Location: ../clientes");
+                            break;
+                        default:
+                            echo "Accion no reconocida.";
+                            break;
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            die("ERROR:" . $e->getMessage());
+        }
+
+        include("src/Views/Admin/tables-details/clienteDetail.php");
+    }
+
     public function empresas()
     {
         requireAuth();
