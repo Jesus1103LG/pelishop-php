@@ -2,6 +2,8 @@
 $url = explode("/", URL);
 $url = !empty($url[2]) ? $url[2] : "home";
 
+$rol = isset($_SESSION["rol"]) ? $_SESSION["rol"] : null;
+$rol = $rol == 1 ? "Admin" : ($rol == 2 ? "Cliente" : ($rol == 3 ? "Empresa" : null));
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +55,7 @@ $url = !empty($url[2]) ? $url[2] : "home";
                     </ul>
                 <?php else: ?>
                     <ul class="navbar-links">
-                        <li><a href="/peliShop_PHP/Cliente/home">PROFILE</a></li>
+                        <li><a href="/peliShop_PHP/<?= $rol ?>/profile">PROFILE</a></li>
                         <li><a href="/peliShop_PHP/Landing/logout">LOGOUT</a></li>
                     </ul>
                 <?php endif; ?>
