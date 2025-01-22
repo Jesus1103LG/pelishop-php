@@ -8,15 +8,17 @@ function create_producto(array $data): void
     $stock = secure_data($data["stock"]);
     $talla = secure_data($data["talla"]);
     $color = secure_data($data["color"]);
+    $persona_cedula = secure_data($data["persona_cedula"]);
 
     $coneccion = coneccionDB();
 
-    $stmt = $coneccion->prepare("INSERT INTO producto (nombre,precio,stock,talla,color) VALUES (:nombre,:precio,:stock,:talla,:color)");
+    $stmt = $coneccion->prepare("INSERT INTO producto (nombre,precio,stock,talla,color,persona_cedula) VALUES (:nombre,:precio,:stock,:talla,:color,:persona_cedula)");
     $stmt->bindParam(":nombre", $nombre);
     $stmt->bindParam(":precio", $precio);
     $stmt->bindParam(":stock", $stock);
     $stmt->bindParam(":talla", $talla);
     $stmt->bindParam(":color", $color);
+    $stmt->bindParam(":persona_cedula", $persona_cedula);
 
     $stmt->execute();
 }
@@ -86,15 +88,17 @@ function update_producto(int $id, array $data): void
     $stock = secure_data($data["stock"]);
     $talla = secure_data($data["talla"]);
     $color = secure_data($data["color"]);
+    $persona_cedula = secure_data($data["persona_cedula"]);
 
     $coneccion = coneccionDB();
 
-    $stmt = $coneccion->prepare("UPDATE producto SET nombre=:nombre,precio=:precio,stock=:stock,talla=:talla,color=:color WHERE id=:id");
+    $stmt = $coneccion->prepare("UPDATE producto SET nombre=:nombre,precio=:precio,stock=:stock,talla=:talla,color=:color,persona_cedula=:persona_cedula WHERE id=:id");
     $stmt->bindParam(":nombre", $nombre);
     $stmt->bindParam(":precio", $precio);
     $stmt->bindParam(":stock", $stock);
     $stmt->bindParam(":talla", $talla);
     $stmt->bindParam(":color", $color);
+    $stmt->bindParam(":persona_cedula", $persona_cedula);
     $stmt->bindParam(":id", $id);
 
     $stmt->execute();
