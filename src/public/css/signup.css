@@ -152,3 +152,12 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #d93a3a;
   font-size: 14px;
 }
+
+#btn_delete {
+  width: 50%;
+  background: rgb(185, 28, 28);
+}
+
+#btn_delete:hover {
+  background: rgb(239 68 68);
+}
