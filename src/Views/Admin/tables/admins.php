@@ -6,7 +6,6 @@
         <thead>
             <tr>
                 <th>Cédula</th>
-                <th>Identidad</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Teléfono</th>
@@ -22,8 +21,7 @@
             <?php foreach ($admins as $admin): ?>
                 <?php if ($admin["roles_id"] == 1): ?>
                     <tr>
-                        <td><?= $admin["cedula"]; ?></td>
-                        <td><?= $admin["identidad"]; ?></td>
+                        <td><?= $admin["identidad"] . "." . $admin["cedula"]; ?></td>
                         <td><?= $admin["nombre"]; ?></td>
                         <td><?= $admin["email"]; ?></td>
                         <td><?= $admin["telefono"]; ?></td>

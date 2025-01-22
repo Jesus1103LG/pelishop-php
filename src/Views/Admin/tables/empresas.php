@@ -6,7 +6,6 @@
         <thead>
             <tr>
                 <th>Cédula</th>
-                <th>Identidad</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Teléfono</th>
@@ -22,8 +21,7 @@
             <?php foreach ($empresas as $empresa): ?>
                 <?php if ($empresa["roles_id"] == 3): ?>
                     <tr>
-                        <td><?= $empresa["cedula"]; ?></td>
-                        <td><?= $empresa["identidad"]; ?></td>
+                        <td><?= $empresa["identidad"] . "." . $empresa["cedula"]; ?></td>
                         <td><?= $empresa["nombre"]; ?></td>
                         <td><?= $empresa["email"]; ?></td>
                         <td><?= $empresa["telefono"]; ?></td>

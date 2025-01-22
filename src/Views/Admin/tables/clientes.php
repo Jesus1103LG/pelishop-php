@@ -6,7 +6,6 @@
         <thead>
             <tr>
                 <th>Cédula</th>
-                <th>Identidad</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Teléfono</th>
@@ -22,8 +21,7 @@
             <?php foreach ($clientes as $cliente): ?>
                 <?php if ($cliente["roles_id"] == 2): ?>
                     <tr>
-                        <td><?= $cliente["cedula"]; ?></td>
-                        <td><?= $cliente["identidad"]; ?></td>
+                        <td><?= $cliente["identidad"] . "." . $cliente["cedula"]; ?></td>
                         <td><?= $cliente["nombre"]; ?></td>
                         <td><?= $cliente["email"]; ?></td>
                         <td><?= $cliente["telefono"]; ?></td>
