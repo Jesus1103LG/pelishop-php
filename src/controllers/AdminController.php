@@ -290,6 +290,41 @@ class AdminController
         include("src/Views/Admin/tables/categorias.php");
     }
 
+    public function categoria_detail($id)
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $categoria = get_categoria($id);
+
+        try {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $category = $_POST["categoria"];
+                $descripcion = $_POST["descripcion"];
+
+                if (isset($_POST["accion"])) {
+                    switch ($_POST["accion"]) {
+                        case 'update':
+                            update_categoria($id, $category, $descripcion);
+                            header("Location: ../categorias");
+                            break;
+                        case 'delete':
+                            delete_categoria($id);
+                            header("Location: ../categorias");
+                            break;
+                        default:
+                            echo "Accion no reconocida.";
+                            break;
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            die("ERROR:" . $e->getMessage());
+        }
+
+        include("src/Views/Admin/tables-details/categoriaDetail.php");
+    }
+
     public function productos()
     {
         requireAuth();
