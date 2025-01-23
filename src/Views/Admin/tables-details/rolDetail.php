@@ -1,8 +1,5 @@
 <?php $subTitulo = "Rol Detail"; ?>
 <?php include("src/layout/header.php"); ?>
-<?php
-?>
-
 
 <div class="content">
     <form id="form" method="POST" action="">
