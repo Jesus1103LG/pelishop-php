@@ -9,7 +9,6 @@
                 <th>fecha</th>
                 <th>monto</th>
                 <th>Persona</th>
-                <th>Acción</th>
             </tr>
         </thead>
         <tbody>
@@ -20,14 +19,11 @@
                         <td><?= $venta["fecha"]; ?></td>
                         <td><?= $venta["monto"]; ?></td>
                         <td><?= get_persona_cedula($venta["persona_cedula"])["nombre"]; ?></td>
-                        <td>
-                            <a href="venta_detail/<?= $venta["id"] ?>" class="action-link">Editar</a>
-                        </td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
-                    <td colspan="5">No hay ventas</td>
+                    <td colspan="4">No hay ventas</td>
                 </tr>
             <?php endif; ?>
         </tbody>
