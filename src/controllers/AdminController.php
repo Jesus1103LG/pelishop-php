@@ -246,6 +246,40 @@ class AdminController
         include("src/Views/Admin/tables/roles.php");
     }
 
+    public function rol_detail($id)
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $_rol = get_rol($id);
+
+        try {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $data = $_POST["rol"];
+
+                if (isset($_POST["accion"])) {
+                    switch ($_POST["accion"]) {
+                        case 'update':
+                            update_rol($id, $data);
+                            header("Location: ../roles");
+                            break;
+                        case 'delete':
+                            delete_rol($id);
+                            header("Location: ../roles");
+                            break;
+                        default:
+                            echo "Accion no reconocida.";
+                            break;
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            die("ERROR:" . $e->getMessage());
+        }
+
+        include("src/Views/Admin/tables-details/rolDetail.php");
+    }
+
     public function categorias()
     {
         requireAuth();
