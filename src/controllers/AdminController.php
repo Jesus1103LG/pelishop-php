@@ -236,6 +236,42 @@ class AdminController
         include("src/Views/Admin/tables/ciudades.php");
     }
 
+    public function ciudad_detail($id)
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $ciudad = get_ciudad($id);
+        $estados = get_all_estados();
+
+        try {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $ciudad = $_POST["ciudad"];
+                $estado = $_POST["estado"];
+
+                if (isset($_POST["accion"])) {
+                    switch ($_POST["accion"]) {
+                        case 'update':
+                            update_ciudad($id, $ciudad, $estado);
+                            header("Location: ../ciudades");
+                            break;
+                        case 'delete':
+                            delete_ciudad($id);
+                            header("Location: ../ciudades");
+                            break;
+                        default:
+                            echo "Accion no reconocida.";
+                            break;
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            die("ERROR:" . $e->getMessage());
+        }
+
+        include("src/Views/Admin/tables-details/ciudadDetail.php");
+    }
+
     public function roles()
     {
         requireAuth();
