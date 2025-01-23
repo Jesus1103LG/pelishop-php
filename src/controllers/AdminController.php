@@ -236,6 +236,26 @@ class AdminController
         include("src/Views/Admin/tables/ciudades.php");
     }
 
+    public function ciudad_create()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $estados = get_all_estados();
+
+        try {
+            if (!empty($_POST)) {
+                create_ciudad($_POST["ciudad"], $_POST["estado"]);
+                header("Location: ciudades");
+                exit;
+            }
+        } catch (Exception $e) {
+            die("ERROR: " . $e->getMessage());
+        }
+
+        include("src/Views/Admin/tables-create/ciudadCreate.php");
+    }
+
     public function ciudad_detail($id)
     {
         requireAuth();
