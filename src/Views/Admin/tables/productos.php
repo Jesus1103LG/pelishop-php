@@ -27,7 +27,7 @@
                         <td><?= $producto["color"]; ?></td>
                         <td><?= get_persona_cedula($producto["persona_cedula"])["email"]; ?></td>
                         <td>
-                            <a href="producto-detail/<?= $producto["id"] ?>" class="action-link">Editar</a>
+                            <a href="producto_detail/<?= $producto["id"] ?>" class="action-link">Editar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
