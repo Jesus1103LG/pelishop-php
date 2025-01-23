@@ -232,6 +232,46 @@ class AdminController
         include("src/Views/Admin/tables/productos.php");
     }
 
+    public function producto_detail($id)
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $producto = get_producto($id);
+
+        try {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $data = [
+                    "nombre" => $_POST["nombre"],
+                    "precio" => $_POST["precio"],
+                    "stock" => $_POST["stock"],
+                    "talla" => $_POST["talla"],
+                    "color" => $_POST["color"],
+                    "persona_cedula" => $_POST["distribuidor"]
+                ];
+
+                if (isset($_POST["accion"])) {
+                    switch ($_POST["accion"]) {
+                        case 'update':
+                            update_producto($id, $data);
+                            header("Location: ../productos");
+                            break;
+                        case 'delete':
+                            delete_producto($id);
+                            header("Location: ../productos");
+                            break;
+                        default:
+                            echo "Accion no reconocida.";
+                            break;
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            die("ERROR:" . $e->getMessage());
+        }
+        include("src/Views/Admin/tables-details/productDetail.php");
+    }
+
     public function ventas()
     {
         requireAuth();
