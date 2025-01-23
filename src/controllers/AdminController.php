@@ -192,6 +192,40 @@ class AdminController
         include("src/Views/Admin/tables/estados.php");
     }
 
+    public function estado_detail($id)
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $estado = get_estado($id);
+
+        try {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $data = $_POST["estado"];
+
+                if (isset($_POST["accion"])) {
+                    switch ($_POST["accion"]) {
+                        case 'update':
+                            update_estados($id, $data);
+                            header("Location: ../estados");
+                            break;
+                        case 'delete':
+                            delete_estados($id);
+                            header("Location: ../estados");
+                            break;
+                        default:
+                            echo "Accion no reconocida.";
+                            break;
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            die("ERROR:" . $e->getMessage());
+        }
+
+        include("src/Views/Admin/tables-details/estadoDetail.php");
+    }
+
     public function ciudades()
     {
         requireAuth();
