@@ -1,7 +1,11 @@
 <?php $subTitulo = "Categoria Table"; ?>
 <?php include("src/layout/header.php"); ?>
 
-<div class="table-container">
+<div class="table-container" style="margin-top: 2rem;">
+    <div style="display: flex; justify-content: space-between;">
+        <h2><?= $subTitulo ?></h2>
+        <a href="categoria_create" class="action-link">Crear Categoria</a>
+    </div>
     <table class="custom-table">
         <thead>
             <tr>

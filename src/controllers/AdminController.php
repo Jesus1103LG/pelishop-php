@@ -346,6 +346,24 @@ class AdminController
         include("src/Views/Admin/tables/categorias.php");
     }
 
+    public function categoria_create()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        try {
+            if (!empty($_POST)) {
+                create_categoria($_POST["categoria"], $_POST["descripcion"]);
+                header("Location: categorias");
+                exit;
+            }
+        } catch (Exception $e) {
+            die("ERROR: " . $e->getMessage());
+        }
+
+        include("src/Views/Admin/tables-create/categoriaCreate.php");
+    }
+
     public function categoria_detail($id)
     {
         requireAuth();
