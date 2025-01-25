@@ -2,28 +2,30 @@
 
 @font-face {
   font-family: "MiFuente";
-  src: url("../fonts/Ubuntu-Regular.ttf") format("ttf");
+  src: url("/peliShop_PHP/src/public/fonts/Ubuntu-Regular.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "MiFuente";
-  src: url("../fonts/Ubuntu-Bold.ttf") format("ttf");
+  src: url("/peliShop_PHP/src/public/fonts/Ubuntu-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "MiFuente";
-  src: url("../fonts/Ubuntu-Light.ttf") format("ttf");
+  src: url("/peliShop_PHP/src/public/fonts/Ubuntu-Light.ttf") format("truetype");
   font-weight: lighter;
   font-style: normal;
 }
 
 @font-face {
   font-family: "MiFuente";
-  src: url("../fonts/Ubuntu-Italic.ttf") format("ttf");
+  src: url("/peliShop_PHP/src/public/fonts/Ubuntu-Italic.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: italic;
 }
@@ -38,7 +40,7 @@
   box-sizing: border-box;
   border-style: none;
   list-style: none;
-  font-family: "MiFuente", sans-serif;
+  font-family: "MiFuente", serif;
 }
 
 .header {
