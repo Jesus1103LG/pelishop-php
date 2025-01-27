@@ -23,8 +23,6 @@ class ClienteController
         requireAuth();
         noRedirectToOtherRol();
 
-
-        // TODO: Logica para mostrar los datos del usuario.
         $datos = get_persona_email($_SESSION["email"]);
 
         include("src/Views/Client/profile.php");
