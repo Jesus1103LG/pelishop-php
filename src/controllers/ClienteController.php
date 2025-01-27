@@ -8,6 +8,7 @@ class ClienteController
         require_once("src/model/personaDB.php");
 
         // TODO: Logica para mostrar los productos.
+
         include("src/Views/Client/home.php");
     }
 
@@ -19,6 +20,7 @@ class ClienteController
         require_once("src/model/personaDB.php");
 
         // TODO: Logica para mostrar los datos del usuario.
+        $datos = get_persona_email($_SESSION["email"]);
 
         include("src/Views/Client/profile.php");
     }
