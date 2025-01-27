@@ -19,9 +19,9 @@ $rol = $rol == 1 ? "Admin" : ($rol == 2 ? "Cliente" : ($rol == 3 ? "Empresa" : n
         <link rel="stylesheet" href="/peliShop_PHP/src/public/css/Admin/style.css" />
     <?php endif; ?>
     <?php if (isset($_SESSION["rol"]) && $_SESSION["rol"] == 2): ?>
-        <link rel="stylesheet" href="/peliShop_PHP/src/public/css/client/style.css" />
         <link rel="stylesheet" href="/peliShop_PHP/src/public/css/client/shop.css" />
     <?php endif; ?>
+    <link rel="stylesheet" href="/peliShop_PHP/src/public/css/client/style.css" />
 </head>
 
 <body>
