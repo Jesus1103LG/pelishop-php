@@ -119,20 +119,24 @@ function update_persona(array $data): void
     $nombre = secure_data($data["nombre"]);
     $email = secure_data($data["email"]);
     $telefono = secure_data($data["telefono"]);
+    $direccion = secure_data($data["direccion"]);
     $rol = secure_data($data["rol"]);
+    $foto_perfil = secure_data($data["foto_perfil"]);
 
     $fecha_nc = new DateTime($data["fecha_nc"]);
     $fecha_nc = $fecha_nc->format("Y-m-d");
 
     $coneccion = coneccionDB();
 
-    $stmt = $coneccion->prepare("UPDATE persona SET identidad=:identidad, nombre=:nombre, email=:email, telefono=:telefono, roles_id=:roles_id, fecha_nc=:fecha_nc WHERE cedula=:cedula");
+    $stmt = $coneccion->prepare("UPDATE persona SET identidad=:identidad, nombre=:nombre, email=:email, telefono=:telefono,direccion_id=:direccion_id, roles_id=:roles_id, foto_perfil=:foto_perfil, fecha_nc=:fecha_nc WHERE cedula=:cedula");
     $stmt->bindParam(":cedula", $cedula);
     $stmt->bindParam(":identidad", $identidad);
     $stmt->bindParam(":nombre", $nombre);
     $stmt->bindParam(":email", $email);
     $stmt->bindParam(":telefono", $telefono);
+    $stmt->bindParam(":direccion_id", $direccion);
     $stmt->bindParam(":roles_id", $rol);
+    $stmt->bindParam(":foto_perfil", $foto_perfil);
     $stmt->bindParam(":fecha_nc", $fecha_nc);
 
     $stmt->execute();
