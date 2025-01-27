@@ -86,7 +86,7 @@ class ClienteController
             }
         }
 
-        include("src/Views/edit_profile.php");
+        include("src/Views/Client/edit_profile.php");
     }
 
     public function shop()
