@@ -9,10 +9,10 @@ function create_direccion(string $calle, int $estado_id, int $ciudad_id): int
 
     $coneccion = coneccionDB();
 
-    $stmt = $coneccion->prepare("INSERT INTO direccion (calle, estado_id, ciudad_id) VALUES (:calle, :estado_id, :ciudad_id)");
+    $stmt = $coneccion->prepare("INSERT INTO direccion (calle, estados_id, ciudades_id) VALUES (:calle, :estados_id, :ciudades_id)");
     $stmt->bindParam(":calle", $calle);
-    $stmt->bindParam(":estado_id", $estado_id);
-    $stmt->bindParam(":ciudad_id", $ciudad_id);
+    $stmt->bindParam(":estados_id", $estado_id);
+    $stmt->bindParam(":ciudades_id", $ciudad_id);
 
     $stmt->execute();
 
