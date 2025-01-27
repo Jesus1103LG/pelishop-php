@@ -58,7 +58,11 @@ class ClienteController
             }
 
             if (isset($_POST["accion"])) {
-                $direccion_nueva = create_direccion($_POST["direccion"], $_POST["estado"], $_POST["ciudad"]);
+                if ($persona["direccion_id"] == 1) {
+                    $direccion_nueva = create_direccion($_POST["direccion"], $_POST["estado"], $_POST["ciudad"]);
+                }
+
+                $profile_photo = $_FILES["image"]["name"] == $persona["foto_perfil"] ? $persona["foto_perfil"] : uploadImage("image");
 
                 $data = [
                     "cedula" => $persona["cedula"],
@@ -67,8 +71,8 @@ class ClienteController
                     "email" => $_POST["email"],
                     "telefono" => $_POST["telefono"],
                     "fecha_nc" => $_POST["fechaNc"],
-                    "direccion" => $direccion_nueva,
-                    "foto_perfil" => $_FILES["image"]["name"] == "default.png" ? "default.png" : uploadImage("image"),
+                    "direccion" => $direccion_nueva ? $direccion_nueva : $persona["direccion_id"],
+                    "foto_perfil" => $_FILES["image"]["name"] == "default.png" ? "default.png" : $profile_photo,
                     "rol" => $persona["roles_id"]
                 ];
 
