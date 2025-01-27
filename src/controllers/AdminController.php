@@ -409,6 +409,36 @@ class AdminController
         include("src/Views/Admin/tables/productos.php");
     }
 
+    public function pruduct_create()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+        require_once("src/helpers/loadImage.php");
+        $empresas = get_all_persona();
+
+        try {
+            if (!empty($_POST)) {
+                $data = [
+                    "nombre" => $_POST["nombre"],
+                    "precio" => $_POST["precio"],
+                    "stock" => $_POST["stock"],
+                    "talla" => $_POST["talla"],
+                    "color" => $_POST["color"],
+                    "persona_cedula" => $_POST["distribuidor"],
+                    "foto_producto" => uploadImage("image")
+                ];
+
+                create_producto($data);
+                header("Location: ../productos");
+                exit;
+            }
+        } catch (Exception $e) {
+            die("ERROR: " . $e->getMessage());
+        }
+
+        include("src/Views/Admin/tables-create/productoCreate.php");
+    }
+
     public function producto_detail($id)
     {
         requireAuth();
