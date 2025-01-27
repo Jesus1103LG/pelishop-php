@@ -59,7 +59,7 @@ class ClienteController
 
             if (isset($_POST["accion"])) {
                 $direccion_nueva = create_direccion($_POST["direccion"], $_POST["estado"], $_POST["ciudad"]);
-                var_dump($direccion_nueva);
+
                 $data = [
                     "cedula" => $persona["cedula"],
                     "identidad" => $persona["identidad"],
@@ -75,7 +75,7 @@ class ClienteController
                 switch ($_POST["accion"]) {
                     case 'update':
                         update_persona($data);
-                        // header("Location: /peliShop_PHP/Cliente/profile");
+                        header("Location: /peliShop_PHP/Cliente/profile");
                         break;
                     default:
                         echo "Accion no reconocida.";
