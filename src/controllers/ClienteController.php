@@ -23,6 +23,16 @@ class ClienteController
         include("src/Views/Client/profile.php");
     }
 
+    public function shop()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        require_once("src/model/productoDB.php");
+
+        include("src/Views/Client/shop.php");
+    }
+
     public function _404()
     {
         requireAuth();
