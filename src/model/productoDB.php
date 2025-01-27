@@ -9,7 +9,7 @@ function create_producto(array $data): void
     $talla = secure_data($data["talla"]);
     $color = secure_data($data["color"]);
     $persona_cedula = secure_data($data["persona_cedula"]);
-    $foto_pruducto = secure_data($data["foto_producto"]);
+    $foto_producto = $data["foto_producto"];
 
     $coneccion = coneccionDB();
 
