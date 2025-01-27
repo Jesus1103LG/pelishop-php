@@ -52,7 +52,7 @@ function get_ciudades_by_estado(int $estados_id): false | array
     $stmt->bindParam(":estados_id", $estados_id);
 
     $stmt->execute();
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     return $result;
 }
