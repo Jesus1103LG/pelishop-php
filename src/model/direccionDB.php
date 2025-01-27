@@ -1,7 +1,7 @@
 <?php
 require_once("src/model/conection.php");
 
-function create_direccion(string $calle, int $estado_id, int $ciudad_id): void
+function create_direccion(string $calle, int $estado_id, int $ciudad_id): int
 {
     $calle = secure_data($calle);
     $estado_id = secure_data($estado_id);
@@ -15,6 +15,8 @@ function create_direccion(string $calle, int $estado_id, int $ciudad_id): void
     $stmt->bindParam(":ciudad_id", $ciudad_id);
 
     $stmt->execute();
+
+    return $coneccion->lastInsertId();
 }
 
 function get_direccion(int $id): false | array
