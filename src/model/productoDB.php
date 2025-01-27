@@ -9,16 +9,18 @@ function create_producto(array $data): void
     $talla = secure_data($data["talla"]);
     $color = secure_data($data["color"]);
     $persona_cedula = secure_data($data["persona_cedula"]);
+    $foto_pruducto = secure_data($data["foto_pruducto"]);
 
     $coneccion = coneccionDB();
 
-    $stmt = $coneccion->prepare("INSERT INTO producto (nombre,precio,stock,talla,color,persona_cedula) VALUES (:nombre,:precio,:stock,:talla,:color,:persona_cedula)");
+    $stmt = $coneccion->prepare("INSERT INTO producto (nombre,precio,stock,talla,color,persona_cedula,foto_producto) VALUES (:nombre,:precio,:stock,:talla,:color,:persona_cedula, :foto_producto)");
     $stmt->bindParam(":nombre", $nombre);
     $stmt->bindParam(":precio", $precio);
     $stmt->bindParam(":stock", $stock);
     $stmt->bindParam(":talla", $talla);
     $stmt->bindParam(":color", $color);
     $stmt->bindParam(":persona_cedula", $persona_cedula);
+    $stmt->bindParam(":foto_producto", $foto_producto);
 
     $stmt->execute();
 }
