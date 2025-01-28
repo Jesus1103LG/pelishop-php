@@ -55,6 +55,13 @@ $rol = $rol == 1 ? "Admin" : ($rol == 2 ? "Cliente" : ($rol == 3 ? "Empresa" : n
                     </ul>
                 <?php else: ?>
                     <ul class="navbar-links">
+                        <?php if ($rol == "Cliente"): ?>
+                            <li class="carrito-link"><a href=""><img src="/peliShop_PHP/src/public/carrito-de-compras.svg" alt=""></a>
+                                <div>
+                                    <p>0</p>
+                                </div>
+                            </li>
+                        <?php endif; ?>
                         <li><a href="/peliShop_PHP/<?= $rol ?>/profile">PROFILE</a></li>
                         <li><a href="/peliShop_PHP/Landing/logout">LOGOUT</a></li>
                     </ul>
