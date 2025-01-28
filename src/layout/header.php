@@ -57,7 +57,7 @@ $rol = $rol == 1 ? "Admin" : ($rol == 2 ? "Cliente" : ($rol == 3 ? "Empresa" : n
                 <?php else: ?>
                     <ul class="navbar-links">
                         <?php if ($rol == "Cliente"): ?>
-                            <li class="carrito-link"><a href=""><img src="/peliShop_PHP/src/public/carrito-de-compras.svg" alt=""></a>
+                            <li class="carrito-link"><a href="/peliShop_PHP/Cliente/carrito_compras"><img src="/peliShop_PHP/src/public/carrito-de-compras.svg" alt=""></a>
                                 <div>
                                     <p class="contador_producotos_carrito">0</p>
                                 </div>
