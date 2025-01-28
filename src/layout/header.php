@@ -18,6 +18,7 @@ $rol = $rol == 1 ? "Admin" : ($rol == 2 ? "Cliente" : ($rol == 3 ? "Empresa" : n
     <link rel="stylesheet" href="/peliShop_PHP/src/public/css/Admin/style.css" />
     <link rel="stylesheet" href="/peliShop_PHP/src/public/css/client/shop.css" />
     <link rel="stylesheet" href="/peliShop_PHP/src/public/css/client/style.css" />
+    <script src="/peliShop_PHP/src/public/javascript/shopingCar.js"></script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@ $rol = $rol == 1 ? "Admin" : ($rol == 2 ? "Cliente" : ($rol == 3 ? "Empresa" : n
                         <?php if ($rol == "Cliente"): ?>
                             <li class="carrito-link"><a href=""><img src="/peliShop_PHP/src/public/carrito-de-compras.svg" alt=""></a>
                                 <div>
-                                    <p>0</p>
+                                    <p class="contador_producotos_carrito">0</p>
                                 </div>
                             </li>
                         <?php endif; ?>
