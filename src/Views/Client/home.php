@@ -1,5 +1,9 @@
 <?php $subTitulo = "Home"; ?>
-<?php include("src/layout/header.php"); ?>
+<?php
+include("src/layout/header.php");
+$cont = 0;
+$contt = 0;
+?>
 
 <div class="banner">
     <div>
@@ -10,11 +14,12 @@
 </div>
 <main class="main-cli">
     <section>
-        <?php
-        include("src/components/CardProduct.php");
-        include("src/components/CardProduct.php");
-        include("src/components/CardProduct.php");
-        ?>
+        <?php foreach ($productos as $producto): ?>
+            <?php if ($cont != 3): ?>
+                <?php include("src/components/CardProduct.php");
+                $cont++; ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
     </section>
     <section>
         <div class="target" style="background: url('/peliShop_PHP/src/public/img2.jpg') no-repeat center center; background-size: cover;">
@@ -31,11 +36,13 @@
         </div>
     </section>
     <section>
-        <?php
-        include("src/components/CardProduct.php");
-        include("src/components/CardProduct.php");
-        include("src/components/CardProduct.php");
-        ?>
+        <?php foreach ($productos as $producto): ?>
+            <?php if ($contt != 3): ?>
+                <?php include("src/components/CardProduct.php");
+                $contt++; ?>
+            <?php endif; ?>
+
+        <?php endforeach; ?>
     </section>
 
 </main>

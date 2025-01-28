@@ -13,7 +13,7 @@ class ClienteController
         requireAuth();
         noRedirectToOtherRol();
 
-        // TODO: Logica para mostrar los productos.
+        $productos = get_all_productos();
 
         include("src/Views/Client/home.php");
     }
@@ -94,6 +94,7 @@ class ClienteController
         requireAuth();
         noRedirectToOtherRol();
 
+        $productos = get_all_productos();
 
         include("src/Views/Client/shop.php");
     }

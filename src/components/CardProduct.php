@@ -1,10 +1,11 @@
 <div class="product-card">
-    <a href="#">
-        <img class="product-image" src="/peliShop_PHP/src/public/img1.jpg" alt="product image" />
+    <a href="/peliShop_PHP/Cliente/producto_detail/<?= $producto["id"] ?>">
+        <img class="product-image" src="/peliShop_PHP/src/uploads/<?= $producto["foto_producto"] ?>" alt="product image" />
     </a>
     <div class="product-details">
-        <a href="#">
-            <h5 class="product-title">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
+        <a href="/peliShop_PHP/Cliente/producto_detail/<?= $producto["id"] ?>">
+            <h5 class="product-title"><?= $producto["nombre"] ?></h5>
+            <h6 class="distribuidor-email"><b>Vendedor:</b> <?= get_persona_cedula($producto["persona_cedula"])["email"] ?></h6>
         </a>
         <div class="product-rating">
             <div class="stars">
@@ -16,8 +17,8 @@
             <span class="rating-label">5.0</span>
         </div>
         <div class="product-pricing">
-            <span class="price">$599</span>
-            <a href="#" class="add-to-cart-button">Add to cart</a>
+            <span class="price">Bs<?= $producto["precio"] ?></span>
+            <button href="#" class="add-to-cart-button" onclick="addToCar(this.value)" value="<?= $producto["id"] ?>">Add to cart</button>
         </div>
     </div>
 </div>
