@@ -37,6 +37,21 @@ function get_all_productos(): array
     return $result;
 }
 
+function get_all_productos_by_persona(string $cedula): false | array
+{
+    $cedula = secure_data($cedula);
+
+    $coneccion = coneccionDB();
+
+    $stmt = $coneccion->prepare("SELECT * FROM producto WHERE persona_cedula=:persona_cedula");
+    $stmt->bindParam(":persona_cedula", $cedula);
+
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function get_producto(int $id): false | array
 {
     $id = secure_data($id);
