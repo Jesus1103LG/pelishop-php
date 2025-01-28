@@ -92,6 +92,38 @@
   color: white;
 }
 
+.carrito-link {
+  position: relative;
+}
+
+.carrito-link img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  filter: invert(1);
+}
+
+.carrito-link div {
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 100%;
+  background: #fff;
+  color: #000;
+  font-size: 2px;
+}
+
+.carrito-link p {
+  position: absolute;
+  top: 10%;
+  right: 35%;
+  font-size: 10px;
+  color: #000;
+}
+
 /* First Section */
 
 .header-main {
