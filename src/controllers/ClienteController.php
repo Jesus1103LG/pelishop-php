@@ -130,6 +130,15 @@ class ClienteController
         include("src/Views/Client/carrito_compras.php");
     }
 
+    public function producto_detail($id)
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        $producto = get_producto($id);
+
+        include("src/Views/Client/productDetail.php");
+    }
 
     public function _404()
     {

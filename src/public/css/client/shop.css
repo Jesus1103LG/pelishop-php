@@ -186,3 +186,12 @@
 .btn__ {
   background-color: #55f;
 }
+
+.btn_s {
+  color: white;
+  background-color: #44d;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+}
