@@ -4,7 +4,9 @@ require_once("src/model/productoDB.php");
 require_once("src/model/estadosDB.php");
 require_once("src/model/direccionDB.php");
 require_once("src/model/ciudadesDB.php");
+require_once("src/model/productoDB.php");
 require_once("src/helpers/loadImage.php");
+
 
 class ClienteController
 {
@@ -98,6 +100,36 @@ class ClienteController
 
         include("src/Views/Client/shop.php");
     }
+
+    public function carrito_compras()
+    {
+        requireAuth();
+        noRedirectToOtherRol();
+
+        // Inicializa la variable $carrito desde la sesión o como un array vacío
+        $carrito = isset($_SESSION["carrito"]) ? $_SESSION["carrito"] : [];
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            // Intentar obtener los datos enviados en el cuerpo de la solicitud
+            $carrito = json_decode(file_get_contents("php://input"), true);
+            var_dump($carrito);
+            if (json_last_error() === JSON_ERROR_NONE) {
+                // Guardar el carrito en la sesión
+                $_SESSION["carrito"] = $carrito;
+
+                // Opcional: Enviar una respuesta JSON al frontend
+                echo json_encode(["status" => "success", "message" => "Carrito actualizado"]);
+                exit;
+            } else {
+                echo json_encode(["status" => "error", "message" => json_last_error_msg()]);
+                exit;
+            }
+        }
+
+        // Incluir la vista, el carrito estará disponible como variable
+        include("src/Views/Client/carrito_compras.php");
+    }
+
 
     public function _404()
     {
