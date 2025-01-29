@@ -27,13 +27,13 @@ $rol = $rol == 1 ? "Admin" : ($rol == 2 ? "Cliente" : ($rol == 3 ? "Empresa" : n
             <div class="navbar-first-div">
                 <img src="/peliShop_PHP/src/public/logo.png" alt="PeliShop-logo" />
                 <p><b>Peli</b>Shop</p>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             </div>
             <div class="navbar-last-div">
                 <?php if (!isset($_SESSION["rol"])): ?>
                     <ul class="navbar-links">
                         <li><a href="/peliShop_PHP/">HOME</a></li>
-                        <li><a href="">SHOP</a></li>
-                        <li><a href="">SITE</a></li>
+                        <li><a href="/peliShop_PHP/login">SHOP</a></li>
                     </ul>
                 <?php elseif ($_SESSION["rol"] == 1): ?>
                     <?php include("src/layout/navAdmin.php"); ?>

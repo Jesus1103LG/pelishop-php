@@ -103,3 +103,36 @@ function disminuirCantidad(idProducto) {
   location.reload(true);
   window.location = "http://localhost/peliShop_PHP/Cliente/carrito_compras";
 }
+
+function clearCart() {
+  // Vaciar el carrito en localStorage
+  localStorage.removeItem("cart");
+
+  // Crear el modal dinámicamente
+  const modal = document.createElement("div");
+  modal.innerHTML = `
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <h2>Compra realizada con éxito</h2>
+        <button onclick="closeModal()">Aceptar</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Recargar la página después de mostrar el modal
+  setTimeout(() => {
+    location.reload();
+    enviarCarrito();
+    location.reload(true);
+    window.location = "http://localhost/peliShop_PHP/Cliente/shop";
+  }, 2000); // Recarga en 2 segundos para que el usuario vea el mensaje
+}
+
+function closeModal() {
+  document.querySelector(".modal-overlay").remove();
+}
+
+function toggleMenu() {
+  document.querySelector(".navbar").classList.toggle("active");
+}

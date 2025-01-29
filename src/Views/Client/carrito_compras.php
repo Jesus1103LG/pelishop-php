@@ -31,9 +31,13 @@ $total_compra = 0;
                 </li>
             <?php endforeach; ?>
         </ul>
-        <div>
-            <h3>Total de Compra: Bs <?= $total_compra ?></h3>
+        <div class="total">
+            <h3>Total de Compra: Bs <b><?= $total_compra ?></b></h3>
         </div>
+        <div class="modal-content">
+            <button onclick="clearCart()">Finalizar compra</button>
+        </div>
+
     <?php else: ?>
         <p>Tu carrito está vacío.</p>
     <?php endif; ?>

@@ -242,3 +242,9 @@ body.dark .card-description {
   white-space: nowrap; /* Evitar el salto de línea */
   overflow: hidden; /* Ocultar el contenido que sobrepase el contenedor */
 }
+
+@media (max-width: 768px) {
+  .listas-personas {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

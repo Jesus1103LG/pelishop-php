@@ -39,14 +39,6 @@
             <h5 class="card-title">Ciudades</h5>
             <p class="card-description"></p>
         </a>
-        <a href="venta_producto" class="card">
-            <h5 class="card-title">Venta_Producto</h5>
-            <p class="card-description"></p>
-        </a>
-        <a href="categorias_productos" class="card">
-            <h5 class="card-title">Categorias_Productos</h5>
-            <p class="card-description"></p>
-        </a>
         <a href="roles" class="card">
             <h5 class="card-title">Roles</h5>
             <p class="card-description"></p>

@@ -235,3 +235,14 @@
   font-weight: bold;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .main-cli section {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .target {
+    width: min(100%, 50rem);
+  }
+}

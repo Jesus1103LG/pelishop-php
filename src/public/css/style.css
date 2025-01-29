@@ -382,6 +382,10 @@ footer .copy {
   padding: 10px 0;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 /* Responsive */
 
 @media (max-width: 768px) {
@@ -459,12 +463,7 @@ footer .copy {
   }
 
   .first-section-img {
-    top: calc(100vh + 20%);
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    height: 350px;
+    display: none;
   }
 
   .navbar-last-div {
@@ -477,5 +476,59 @@ footer .copy {
 
   .navbar-links {
     column-gap: 20px;
+  }
+
+  .div-insta {
+    display: none;
+  }
+}
+
+/* --- 🎯 RESPONSIVE --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-last-div {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    padding: 10px 0;
+  }
+
+  /* Menú hamburguesa */
+  .menu-toggle {
+    display: block;
+    font-size: 35px;
+    cursor: pointer;
+    margin-left: auto;
+    color: #000;
+    background: none;
+  }
+
+  .navbar.active .navbar-last-div {
+    display: flex;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-first-div img {
+    width: 40px;
+  }
+
+  .navbar-links {
+    gap: 10px;
   }
 }
